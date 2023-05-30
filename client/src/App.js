@@ -5,7 +5,6 @@ import './App.css'
 import Recipes from './components/Recipes'
 import CreateRecipe from './components/CreateRecipe'
 
-import { Container } from 'semantic-ui-react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 
@@ -38,14 +37,13 @@ class App extends Component {
         
 {x}
 
-          <Container style={{marginTop:"1.3%"}}>
 
             <Switch>
               <Route exact path="/recipes" element={<Recipes />} />
               <Route exact path="/createrecipe" element={<CreateRecipe />} />
 
             </Switch>
-          </Container>
+    
         </div>
       </Router>
     )
