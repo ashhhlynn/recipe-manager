@@ -6,7 +6,7 @@ databases:
 
 services:
   - type: web
-    name: recipe_manager
+    name: recipe-manager
     plan: free
     env: ruby
     buildCommand: "./render-build.sh"
