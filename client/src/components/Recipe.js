@@ -28,11 +28,11 @@ class Recipe extends Component {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-
-                recipe_id: id, user_id: this.props.currentUser.id })
+                        recipe_id: id, user_id: this.props.currentUser.id 
                     })
-                    .then((response) => response.json())
-                    .then(data => {
+                })
+                .then((response) => response.json())
+                .then(data => {
                     window.alert("Added to favorites.")
                     this.props.addToFavorites(data)
                 })
@@ -57,7 +57,7 @@ class Recipe extends Component {
                 window.alert("Removed from favorites.")
             })
         }
-            else {
+        else {
             window.alert("Failed to remove from favorites.")
         }
     }

@@ -6,17 +6,14 @@ import { logOut } from "./actions/rootActions"
 
 class Head extends Component {
 
-
-
     handleLogout = () => {
         fetch("/logout", {
-        method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    })
-    .then(resp => resp.json())
-
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        .then(resp => resp.json())
         this.props.logOut()
     }    
         

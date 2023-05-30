@@ -36,33 +36,29 @@ class App extends Component {
           <Head/>
           <Container style={{marginTop:"1.3%"}}>
             <Switch>
-              <Route exact path="/recipes">
+              <Route exact path="/">
                 <Recipes/>
               </Route>
               <Route exact path="/createrecipe">
                 <CreateRecipe/>
               </Route>
-
               <Route exact path="/favorites">
                 <Favorites/>
               </Route>
-          
               <Route exact path="/login">
                 <Login/>
               </Route>
-
               <Route exact path="/signup">
                 <Signup/>
               </Route>
-
-              </Switch>
-              </Container>
-    
+            </Switch>
+          </Container>
         </div>
       </Router>
     )
   }
 }
+
 const mapDispatchToProps = (dispatch) => {
   return { 
     checkUser: (user) =>  { dispatch(checkUser(user)) },

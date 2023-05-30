@@ -34,33 +34,33 @@ class Recipes extends Component {
     }
   }
 
-  render() {
-    const recipeGroup = this.props.recipes.map( r => {
-      return (
-        <Recipe recipe={r} key={r.name}/>
-      )
-    })
-    return (
-      <Segment style={{ height:"100%", marginLeft:"-7%", marginRight:"-6.5%", marginTop:"-1.4%" }}>
-        <Grid stackable columns={2} >
-          <Grid.Column style={{width:"300px"}}> 
-            <Navbar/>
-          </Grid.Column>
-          <Grid.Column>  
-            <Item style={{width:"850px", marginLeft:"9%"}}> 
-              <Button id="3" style={{letterSpacing: "1px"}} circular onClick={(event)=>{this.sortItems(event)}}>name</Button> 
-              <Button id="2" style={{letterSpacing: "1px"}} circular onClick={(event)=>{this.sortItems(event)}}>date</Button> 
-              <Button id="1" style={{letterSpacing: "1px"}} circular onClick={(event)=>{this.sortItems(event)}}>rating</Button> 
-              <Button id="4" style={{letterSpacing: "1px"}} circular onClick={(event)=>{this.sortItems(event)}}>reviews</Button> 
-            </Item>
-            <Card.Group itemsPerRow={3} style={{width:"890px", marginTop: "1%", marginLeft:"6.2%"}}>
-              {recipeGroup}
-            </Card.Group>
-          </Grid.Column>
-        </Grid>
-      </Segment>
-    )     
-  }
+    render() {
+        const recipeGroup = this.props.recipes.map( r => {
+            return (
+                <Recipe recipe={r} key={r.name}/>
+            )
+        })
+        return (
+            <Segment style={{ height:"100%", marginLeft:"-7%", marginRight:"-6.5%", marginTop:"-1.4%" }}>
+                <Grid stackable columns={2} >
+                    <Grid.Column style={{width:"300px"}}> 
+                        <Navbar/>
+                    </Grid.Column>
+                    <Grid.Column>  
+                        <Item style={{width:"850px", marginLeft:"9%"}}> 
+                            <Button id="3" style={{letterSpacing: "1px"}} circular onClick={(event)=>{this.sortItems(event)}}>name</Button> 
+                            <Button id="2" style={{letterSpacing: "1px"}} circular onClick={(event)=>{this.sortItems(event)}}>date</Button> 
+                            <Button id="1" style={{letterSpacing: "1px"}} circular onClick={(event)=>{this.sortItems(event)}}>rating</Button> 
+                            <Button id="4" style={{letterSpacing: "1px"}} circular onClick={(event)=>{this.sortItems(event)}}>reviews</Button> 
+                        </Item>
+                        <Card.Group itemsPerRow={3} style={{width:"890px", marginTop: "1%", marginLeft:"6.2%"}}>
+                            {recipeGroup}
+                        </Card.Group>
+                    </Grid.Column>
+                </Grid>
+            </Segment>
+        )     
+    }
 
 }
 

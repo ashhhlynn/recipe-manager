@@ -22,8 +22,8 @@ class Signup extends Component {
             },
             body: JSON.stringify({
                 username: userData.username, email: userData.email, password: userData.password, password_confirmation: userData.password_confirmation            })
-        })
-            .then((response) => response.json())
+            })
+        .then((response) => response.json())
         .then(data => {
             console.log(data);
             window.alert("Signup successful.")
