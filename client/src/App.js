@@ -31,13 +31,12 @@ class App extends Component {
     return (
       <Router>
         <div className="App">   
+        <CreateRecipe />
             <Switch>
               <Route exact path="/recipes">
                 <Recipes/>
               </Route>
-              <Route exact path="/createrecipe" >
-              <CreateRecipe />
-              </Route>
+          
               </Switch>
     
         </div>
