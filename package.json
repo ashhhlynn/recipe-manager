@@ -2,6 +2,9 @@
   "name": "recipe-manager",
   "private": true,
   "dependencies": {
-    "react-router-dom": "^6.11.2"
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.11.2",
+    "semantic-ui-css": "^2.5.0",
+    "semantic-ui-react": "^2.1.4"
   }
 }

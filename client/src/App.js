@@ -1,29 +1,56 @@
-import { useState, useEffect } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0);
+import React, { Component } from 'react'
+import './App.css'
+import Recipes from './components/Recipes'
+import CreateRecipe from './components/CreateRecipe'
 
-  useEffect(() => {
-    fetch("/hello")
-      .then((r) => r.json())
-      .then((data) => setCount(data.count));
-  }, []);
+import { Container } from 'semantic-ui-react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { connect } from "react-redux"
 
-  return (
-    <BrowserRouter>
-      <div className="App">
-        <Switch>
-          <Route path="/testing">
-            <h1>Test Route</h1>
-          </Route>
-          <Route path="/">
-            <h1>Page Count: {count}</h1>
-          </Route>
-        </Switch>
-      </div>
-    </BrowserRouter>
-  );
+class App extends Component {
+
+  state = {
+    recipes: [],
+    r: ''
+  }
+  componentDidMount = () => {
+    fetch("/recipes")
+    .then(resp => resp.json())
+    .then(data => {
+      console.log(data)
+      this.setState({
+        recipes: data,
+        r: data[0]
+      })
+  })}
+  
+  render() {
+    console.log(this.state.recipes)
+    let x = this.state.r.name
+    console.log(x)
+ 
+
+    return (
+      <Router>
+        <div className="App">   
+        
+{x}
+
+          <Container style={{marginTop:"1.3%"}}>
+
+            <Switch>
+              <Route exact path="/recipes" element={<Recipes />} />
+              <Route exact path="/createrecipe" element={<CreateRecipe />} />
+
+            </Switch>
+          </Container>
+        </div>
+      </Router>
+    )
+  }
 }
 
-export default App;
+
+export default App
