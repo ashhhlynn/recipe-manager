@@ -1,5 +1,7 @@
 {
   "name": "recipe-manager",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "react-router-dom": "^6.11.2"
+  }
 }
