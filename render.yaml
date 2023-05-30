@@ -1,8 +1,8 @@
 databases:
   - name: postgres
     ipAllowList: []
-    databaseName: recipe_manager
-    user: recipe_manager
+    databaseName: recipe-manager
+    user: recipe-manager
 
 services:
   - type: web
