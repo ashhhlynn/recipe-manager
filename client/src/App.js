@@ -35,7 +35,7 @@ class App extends Component {
       <Router>
         <div className="App">   
         <b>Heyyyyyy</b>
-{x}Hey
+
 
 
             <Switch>
