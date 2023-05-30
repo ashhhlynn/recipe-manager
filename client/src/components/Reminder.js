@@ -6,9 +6,9 @@ class Reminder extends Component {
     render() {
         return (
             <>
-                <Message color="yellow" style={{letterSpacing:"1px", marginBottom:"-.5%", width:"306px"}}>
-                    register or login to share recipes, reviews, & favorites
-                </Message>   
+            <Message color="yellow" style={{letterSpacing:"1px", marginBottom:"-.5%", width:"306px"}}>
+                register or login to share recipes, reviews, & favorites
+            </Message>   
             </>
         )
     }

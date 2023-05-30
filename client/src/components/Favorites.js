@@ -14,9 +14,7 @@ class Favorites extends Component {
             .then(data => {
                 this.props.fetchFavorites(data)
                 console.log(data)
-        })
-            
-           
+            })
         }
     }
   
@@ -46,14 +44,14 @@ class Favorites extends Component {
 
 const mapStateToProps = (state) => {
     return { 
-      favorites: state.favorites,
-      currentUser: state.currentUser
+        favorites: state.favorites,
+        currentUser: state.currentUser
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return { 
-      fetchFavorites: ( favorites) =>  { dispatch(fetchFavorites(favorites)) }, 
+        fetchFavorites: ( favorites) =>  { dispatch(fetchFavorites(favorites)) }, 
     }
 }
 

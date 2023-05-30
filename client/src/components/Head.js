@@ -13,8 +13,6 @@ class Head extends Component {
                 'Content-Type': 'application/json',
             }
         })
-    
-        .then(resp => resp.json())
         this.props.logOut()
     }    
 

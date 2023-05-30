@@ -18,6 +18,7 @@ class Recipe extends Component {
     handleClose = () => {
         this.setState({ modalOpen: false });
     }
+
     addToFavorites = () => {
         let id = this.props.recipe.id
         if (!this.props.favorites.find(f=> f.recipe_id === id)) {
@@ -100,15 +101,15 @@ class Recipe extends Component {
 
 const mapStateToProps = (state) => {
     return { 
-      favorites: state.favorites,
-      currentUser: state.currentUser
+        favorites: state.favorites,
+        currentUser: state.currentUser
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return { 
-      addToFavorites: (recipe) =>  { dispatch(addToFavorites(recipe)) },
-      removeFavorite: (f) =>  { dispatch(removeFavorite(f)) }
+        addToFavorites: (recipe) =>  { dispatch(addToFavorites(recipe)) },
+        removeFavorite: (f) =>  { dispatch(removeFavorite(f)) }
     }
 }
 

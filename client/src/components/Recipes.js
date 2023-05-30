@@ -20,19 +20,19 @@ class Recipes extends Component {
     }
 
     sortItems = (event) => {
-    if (event.target.id === "1" ) { 
-        this.props.sortRating()
+        if (event.target.id === "1" ) { 
+            this.props.sortRating()
+        }
+        else if (event.target.id === "2" ) { 
+            this.props.sortDate()
+        }
+        else if (event.target.id === "3" ) { 
+            this.props.sortAToZ()
+        }
+        else if (event.target.id === "4" ) { 
+            this.props.sortNumberReviews()
+        }
     }
-    else if (event.target.id === "2" ) { 
-        this.props.sortDate()
-    }
-    else if (event.target.id === "3" ) { 
-        this.props.sortAToZ()
-    }
-    else if (event.target.id === "4" ) { 
-        this.props.sortNumberReviews()
-    }
-  }
 
     render() {
         const recipeGroup = this.props.recipes.map( r => {
@@ -65,19 +65,19 @@ class Recipes extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return { 
-    recipes: state.recipes,
-  }
+    return { 
+        recipes: state.recipes,
+    }
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return { 
-    fetchRecipes: (recipes) =>  { dispatch(fetchRecipes(recipes)) }, 
-    sortAToZ: () =>  { dispatch(sortAToZ()) },
-    sortNumberReviews: () =>  { dispatch(sortNumberReviews()) },
-    sortDate: () =>  { dispatch(sortDate()) },
-    sortRating: () =>  { dispatch(sortRating()) },
-  }
+    return { 
+        fetchRecipes: (recipes) =>  { dispatch(fetchRecipes(recipes)) }, 
+        sortAToZ: () =>  { dispatch(sortAToZ()) },
+        sortNumberReviews: () =>  { dispatch(sortNumberReviews()) },
+        sortDate: () =>  { dispatch(sortDate()) },
+        sortRating: () =>  { dispatch(sortRating()) },
+    }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Recipes)

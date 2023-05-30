@@ -25,6 +25,7 @@ const rootReducer = (state = initialState, action) => {
 
         case "UPDATE_RR":
             console.log(action.recipe)
+            if (state.favorites.find(item => parseInt(item.recipe_id) === action.recipe.id)){
             let x = state.favorites.find(item => parseInt(item.recipe_id) === action.recipe.id)
             console.log(x)
             return {
@@ -32,6 +33,13 @@ const rootReducer = (state = initialState, action) => {
                 recipes: [...state.recipes.filter(item=> item.id !== action.recipe.id), action.recipe],
                 favorites: [...state.favorites.filter(item=> parseInt(item.recipe_id) !== action.recipe.id), x],
                 loading: false,
+            }}
+            else {
+                return {
+                    ...state,
+                    recipes: [...state.recipes.filter(item=> item.id !== action.recipe.id), action.recipe],
+                    loading: false,
+                }
             };
 
         case "SORT_A_TO_Z":

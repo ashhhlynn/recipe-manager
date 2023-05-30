@@ -78,7 +78,7 @@ class CreateReview extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return { 
-      updateRR: (recipe) =>  { dispatch(updateRR(recipe)) }, 
+        updateRR: (recipe) =>  { dispatch(updateRR(recipe)) }, 
     }
 }
 
