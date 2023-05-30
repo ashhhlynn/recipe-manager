@@ -16,7 +16,6 @@ class Head extends Component {
         this.props.logOut()
     }    
 
-
     render() {
         return (
             <div>

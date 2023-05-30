@@ -38,10 +38,16 @@ class CreateReview extends Component {
                 score: number.rating, recipe_id: this.props.recipe.id, text: number.text
             })
         })
-        .then((response) => {
-            console.log(response);
-            window.alert("Review submitted.")
-            this.calculateAverage(number.rating)
+        .then((response) => response.json())
+        .then(data => {
+            if (data.errors){
+                window.alert("Review submission failed.")
+            }
+            else {
+                console.log(data);
+                window.alert("Review submitted.")
+                this.calculateAverage(number.rating)
+            }
         })
     }
 

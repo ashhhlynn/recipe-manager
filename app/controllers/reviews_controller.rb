@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-before_action :set_review, only: [:show, :destroy]
+
 skip_before_action :authorize, only: [:index]
 
 def index
@@ -9,7 +9,6 @@ end
 
 def show
   @review = Review.find(params[:id])
-
   render json: @review
 end
 
@@ -24,16 +23,13 @@ end
 
 def destroy
   @review = Review.find(params[:id])
-
   @review.destroy
 end
 
 private
-  def set_review
-    @review = Review.find(params[:id])
-  end
 
   def review_params
     params.require(:review).permit(:text, :recipe_id, :score)
   end
+
 end

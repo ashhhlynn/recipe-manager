@@ -11,15 +11,13 @@ class UsersController < ApplicationController
     render json: {  user: current_user }, status: :accepted
   end
 
-
-
   def create
     @user = User.create(user_params)
     if @user.valid?
       session[:user_id] = @user.id
-      render json: @user, status: :created
+      render json: @user
     else
-      render json: { message: 'Failed to create user. Please try again.' }
+      render json: { errors: ["User invalid."]  }
     end
   end
 
@@ -28,4 +26,5 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:username, :email, :password, :password_confirmation)
     end
+
 end

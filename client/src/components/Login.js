@@ -30,9 +30,14 @@ class Login extends Component {
         })
         .then((response) => response.json())
         .then(data => {
-            console.log(data);
-            this.props.checkUser(data)
-            window.alert("Login successful.")
+            if (data.errors) {
+                window.alert("Login failed.")
+            }
+            else {
+                console.log(data);
+                this.props.checkUser(data)
+                window.alert("Login successful.")
+            }
         })
     }
     

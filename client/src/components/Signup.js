@@ -10,7 +10,7 @@ class Signup extends Component {
         username: '',
         email: '',
         password: '',
-        password_confirmation: ''
+        password_confirmation: '',
     }
 
     handleSubmit = (event, userData) => {
@@ -21,15 +21,21 @@ class Signup extends Component {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                username: userData.username, email: userData.email, password: userData.password, password_confirmation: userData.password_confirmation})
+                username: userData.username, email: userData.email, password: userData.password, password_confirmation: userData.password_confirmation,
             })
+        })
         .then((response) => response.json())
         .then(data => {
-            console.log(data);
-            window.alert("Signup successful.")
-            this.props.checkUser(data)
+            if (data.errors) {
+                window.alert("Signup failed.")
+            }
+            else {
+                console.log(data);
+                window.alert("Signup successful.")
+                this.props.checkUser(data)
+            }
         })
-    }
+    } 
 
     handleChange = (event) => {
         this.setState ({

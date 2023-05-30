@@ -1,5 +1,7 @@
 class RecipeIngredientsController < ApplicationController
+  
   skip_before_action :authorize, only: [:index, :create, :destroy, :show]
+
   def index
     @recipe_ingredients = RecipeIngredient.all
     render json: @recipe_ingredients
@@ -21,7 +23,6 @@ class RecipeIngredientsController < ApplicationController
 
   def destroy
     @recipe_ingredient = RecipeIngredient.find(params[:id])
-
     @recipe_ingredient.destroy
   end
 

@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
 
     def logout
         session.delete :user_id
-        render json: { message: ["Ok"]  }
+        head :no_content
     end
 
 end

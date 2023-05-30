@@ -51,8 +51,13 @@ class CreateRecipe extends Component {
         })
         .then((response) => response.json())
         .then(data => {
-            console.log(data);    
-            window.alert("Recipe created.")
+            if (data.errors) {
+                    window.alert("Recipe submission failed.")
+                }
+            else {
+                console.log(data);    
+                window.alert("Recipe created.")
+            }
         })
     }          
 

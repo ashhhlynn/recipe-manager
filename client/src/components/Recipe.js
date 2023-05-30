@@ -34,13 +34,15 @@ class Recipe extends Component {
                 })
                 .then((response) => response.json())
                 .then(data => {
+                    if (data.errors) {
+                        window.alert("Failed to add to favorites.")
+                    }
+                    else {
                     window.alert("Added to favorites.")
                     this.props.addToFavorites(data)
+                    }
                 })
             }
-        }
-        else {
-            window.alert("Failed to add to favorites.")
         }
     }
 
@@ -57,9 +59,6 @@ class Recipe extends Component {
                 this.props.removeFavorite(fave.id)
                 window.alert("Removed from favorites.")
             })
-        }
-        else {
-            window.alert("Failed to remove from favorites.")
         }
     }
 
