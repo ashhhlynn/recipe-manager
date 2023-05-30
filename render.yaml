@@ -1,12 +1,12 @@
 databases:
   - name: postgres
     ipAllowList: []
-    databaseName: recipe-manager
-    user: recipe-manager
+    databaseName: recipe_manager
+    user: recipe_manager
 
 services:
   - type: web
-    name: recipe-manager
+    name: recipe_manager
     plan: free
     env: ruby
     buildCommand: "./render-build.sh"
