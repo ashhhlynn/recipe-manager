@@ -1,5 +1,5 @@
 class FavoritesController < ApplicationController
-
+  skip_before_action :authorize, only: [:index, :show, :destroy]
   def index
     @favorites = current_user.favorites
     render json: @favorites, include: [:recipe]

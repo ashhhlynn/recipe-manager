@@ -1,17 +1,17 @@
 class UsersController < ApplicationController
+
+  skip_before_action :authorize, only: [:create, :index, :profile ]
+
   def index
     @users = User.all
-    render json: @users, include: [:favorites]
+    render json: @users
   end
 
   def profile
     render json: {  user: current_user }, status: :accepted
   end
 
-  def show
-    @user = User.find(params[:id])
-    render json: @user, status: :accepted
-  end
+
 
   def create
     @user = User.create(user_params)

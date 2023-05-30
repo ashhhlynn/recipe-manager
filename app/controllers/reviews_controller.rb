@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
 before_action :set_review, only: [:show, :destroy]
+skip_before_action :authorize, only: [:index]
 
 def index
   @reviews = Review.all
