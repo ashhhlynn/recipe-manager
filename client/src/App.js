@@ -1,12 +1,9 @@
 import './App.css'
-
+import 'semantic-ui-css/semantic.min.css'
 import React, { Component } from 'react'
-import './App.css'
 import Recipes from './components/Recipes'
 import CreateRecipe from './components/CreateRecipe'
-
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-
 
 class App extends Component {
 
@@ -34,15 +31,14 @@ class App extends Component {
     return (
       <Router>
         <div className="App">   
-        <b>Heyyyyyy there!!!!!</b>
-
-
-
             <Switch>
-              <Route exact path="/recipes" element={<Recipes />} />
-              <Route exact path="/createrecipe" element={<CreateRecipe />} />
-
-            </Switch>
+              <Route exact path="/recipes">
+                <Recipes/>
+              </Route>
+              <Route exact path="/createrecipe" >
+              <CreateRecipe />
+              </Route>
+              </Switch>
     
         </div>
       </Router>
