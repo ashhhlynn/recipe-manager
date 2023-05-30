@@ -1,5 +1,4 @@
 class RecipeIngredientsController < ApplicationController
-  before_action :set_recipe_ingredient, only: [:show, :destroy]
 
   def index
     @recipe_ingredients = RecipeIngredient.all
@@ -7,6 +6,7 @@ class RecipeIngredientsController < ApplicationController
   end
 
   def show
+    @recipe_ingredient = RecipeIngredient.find(params[:id])
     render json: @recipe_ingredient
   end
 
@@ -20,13 +20,13 @@ class RecipeIngredientsController < ApplicationController
   end
 
   def destroy
+    @recipe_ingredient = RecipeIngredient.find(params[:id])
+
     @recipe_ingredient.destroy
   end
 
   private
-    def set_recipe_ingredient
-      @recipe_ingredient = RecipeIngredient.find(params[:id])
-    end
+
 
     def recipe_ingredient_params
       params.require(:recipe_ingredient).permit(:name, :recipe_id)

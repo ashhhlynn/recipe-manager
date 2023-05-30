@@ -10,7 +10,7 @@ class RecipeInfo extends Component {
     render() {
         const recipe_ingredients = this.props.recipe.recipe_ingredients.map(ri => {
             return (
-                <div key={ri.quantity}>{ri.name}</div>
+                <div key={ri.id}>{ri.name}</div>
             )
         })
         return (         

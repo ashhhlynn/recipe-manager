@@ -99,6 +99,7 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state, 
                 currentUser: [], 
+                favorites: [],
                 loading: false,
             };
 

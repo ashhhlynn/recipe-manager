@@ -11,9 +11,12 @@ class Favorites extends Component {
         if (this.props.currentUser.length !== 0) {
             fetch("/favorites")
             .then(resp => resp.json())
-            .then(data => 
+            .then(data => {
                 this.props.fetchFavorites(data)
-            )
+                console.log(data)
+        })
+            
+           
         }
     }
   

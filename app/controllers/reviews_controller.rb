@@ -7,6 +7,8 @@ def index
 end
 
 def show
+  @review = Review.find(params[:id])
+
   render json: @review
 end
 
@@ -20,6 +22,8 @@ def create
 end
 
 def destroy
+  @review = Review.find(params[:id])
+
   @review.destroy
 end
 

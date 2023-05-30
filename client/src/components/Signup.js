@@ -21,7 +21,7 @@ class Signup extends Component {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                username: userData.username, email: userData.email, password: userData.password, password_confirmation: userData.password_confirmation            })
+                username: userData.username, email: userData.email, password: userData.password, password_confirmation: userData.password_confirmation})
             })
         .then((response) => response.json())
         .then(data => {

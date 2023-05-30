@@ -11,12 +11,14 @@ class Head extends Component {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
-            },
+            }
         })
+    
         .then(resp => resp.json())
         this.props.logOut()
     }    
-        
+
+
     render() {
         return (
             <div>

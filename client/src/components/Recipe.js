@@ -46,7 +46,7 @@ class Recipe extends Component {
     removeFavorite = () => {
         if (this.props.currentUser.length !== 0) {
             let fave = this.props.favorites.find(r => parseInt(r.recipe_id) === this.props.recipe.id)
-            fetch("/favorites", {
+            fetch("/favorites/" + fave.id, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
