@@ -36,7 +36,7 @@ class App extends Component {
           <Head/>
           <Container style={{marginTop:"1.3%"}}>
             <Switch>
-              <Route exact path="/recipes">
+              <Route exact path="/">
                 <Recipes/>
               </Route>
               <Route exact path="/createrecipe">
