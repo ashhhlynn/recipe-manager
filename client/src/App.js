@@ -7,7 +7,7 @@ import CreateRecipe from './components/CreateRecipe'
 
 import { Container } from 'semantic-ui-react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { connect } from "react-redux"
+
 
 class App extends Component {
 
