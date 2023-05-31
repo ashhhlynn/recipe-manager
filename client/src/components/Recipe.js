@@ -55,8 +55,8 @@ class Recipe extends Component {
             },
         })
         .then((response) => {
-console.log(response
-    )        })
+            console.log(response)
+        })
     }
 
     removeFavorite = () => {
@@ -82,9 +82,9 @@ console.log(response
             <Card>
                 <Image style={{cursor:"pointer", width:"270px", height:"260px"}} src= {i.image_url} onClick={this.handleOpen}/>
                 <h3 style={{fontFamily:"Segoe Print", fontWeight:"normal", textAlign:"center", fontSize:"19px", marginTop: "2%", marginBottom:"2%"}}>
-                    {i.name}                     
+                    {i.name}                   <Button onClick={this.deleteRecipe}>Del</Button>
+                  
                 </h3>
-                <Button onClick={this.deleteRecipe}>Del</Button>
                 {this.props.favorites.find(f=> parseInt(f.recipe_id) === i.id) ?
                     <Button floated="right" onClick={this.removeFavorite} style={{marginTop:"-14%", background:"none"}} >
                         <Icon style={{color:"grey", marginLeft:"95%"}}floated="right"  size="large"  name="close"/>
