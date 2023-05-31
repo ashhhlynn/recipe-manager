@@ -1,7 +1,7 @@
 class Recipe < ApplicationRecord
-    has_many :reviews
-    has_many :recipe_ingredients
-    has_many :favorites
+    has_many :reviews, dependent: :destroy
+    has_many :recipe_ingredients, dependent: :destroy
+    has_many :favorites, dependent: :destroy
 
     accepts_nested_attributes_for :recipe_ingredients
     validates :description, length: { maximum: 300 }
