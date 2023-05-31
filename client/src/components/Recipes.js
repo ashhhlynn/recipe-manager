@@ -33,7 +33,18 @@ class Recipes extends Component {
             this.props.sortNumberReviews()
         }
     }
-
+    deleteRecipe = () => {
+        
+        fetch("/recipes/" + 3, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        .then((response) => {
+            console.log(response)
+        })
+    }
     render() {
         const recipeGroup = this.props.recipes.map( r => {
             return (
@@ -48,6 +59,7 @@ class Recipes extends Component {
                     </Grid.Column>
                     <Grid.Column>  
                         <Item style={{width:"850px", marginLeft:"9%"}}> 
+                        <Button onClick={this.deleteR}>Delete Recipe 1</Button>
                             <Button id="3" style={{letterSpacing: "1px"}} circular onClick={(event)=>{this.sortItems(event)}}>name</Button> 
                             <Button id="2" style={{letterSpacing: "1px"}} circular onClick={(event)=>{this.sortItems(event)}}>date</Button> 
                             <Button id="1" style={{letterSpacing: "1px"}} circular onClick={(event)=>{this.sortItems(event)}}>rating</Button> 
