@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     render json: @user, status: :ok
     else 
       render json: { errors: ["Signup failed"] }
-
+    end 
   end
 
   private
