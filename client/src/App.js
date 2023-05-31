@@ -21,12 +21,15 @@ class App extends Component {
     .then(data => {
       console.log(data)
       this.props.checkUser(data.user)
+      if (data.user !== null){
+        fetch("/favorites")
+        .then(response => response.json())
+        .then(data => {
+          this.props.fetchFavorites(data)
+        })
+      }
     })
-    fetch("/favorites")
-    .then(response => response.json())
-    .then(data => {
-      this.props.fetchFavorites(data)
-    })
+
   }
   
   render() {
