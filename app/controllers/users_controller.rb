@@ -13,8 +13,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create!(user_params)
+    if @user.save
     session[:user_id] = @user.id
     render json: @user, status: :ok
+    else 
+      render json: { errors: ["Signup failed"] }
+
   end
 
   private
