@@ -19,9 +19,8 @@ class App extends Component {
     fetch("/profile")
     .then(resp => resp.json())
     .then(data => {
-      console.log(data)
       this.props.checkUser(data.user)
-      if (data.user !== null){
+      if (data.user !== null) {
         fetch("/favorites")
         .then(response => response.json())
         .then(data => {

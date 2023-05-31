@@ -34,7 +34,6 @@ class Login extends Component {
                 window.alert("Login failed.")
             }
             else {
-                console.log(data);
                 this.props.checkUser(data)
                 window.alert("Login successful.")
             }

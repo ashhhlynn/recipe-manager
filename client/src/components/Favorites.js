@@ -13,7 +13,6 @@ class Favorites extends Component {
             .then(resp => resp.json())
             .then(data => {
                 this.props.fetchFavorites(data)
-                console.log(data)
             })
         }
     }

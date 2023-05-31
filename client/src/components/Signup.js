@@ -30,7 +30,6 @@ class Signup extends Component {
                 window.alert("Signup failed.")
             }
             else {
-                console.log(data);
                 window.alert("Signup successful.")
                 this.props.checkUser(data)
             }
