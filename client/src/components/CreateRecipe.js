@@ -42,7 +42,7 @@ class CreateRecipe extends Component {
             },
             body: JSON.stringify({
                 name: recipe.name, 
-                user_id: 7, 
+                user_id: 1, 
                 description: recipe.description, 
                 image_url: recipe.image_url, 
                 average: 0, 
