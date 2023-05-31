@@ -46,19 +46,6 @@ class Recipe extends Component {
         }
     }
 
-    deleteRecipe = () => {
-        let r = this.props.recipe.id
-        fetch("/recipes/" + r, {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
-        .then((response) => {
-            console.log(response)
-        })
-    }
-
     removeFavorite = () => {
         if (this.props.currentUser.length !== 0) {
             let fave = this.props.favorites.find(r => parseInt(r.recipe_id) === this.props.recipe.id)
@@ -96,7 +83,6 @@ class Recipe extends Component {
                 }           
                 <Item>
                     <Rating size="small" rating={i.average} disabled maxRating={5} />
-                    <Button color="black" onClick={this.deleteRecipe}>Del</Button>
                 </Item>
                 <Modal 
                     open={this.state.modalOpen}
