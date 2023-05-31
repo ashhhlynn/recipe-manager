@@ -96,7 +96,7 @@ class Recipe extends Component {
                 }           
                 <Item>
                     <Rating size="small" rating={i.average} disabled maxRating={5} />
-                    <Button onClick={this.deleteRecipe}>Del</Button>
+                    <Button color="black" onClick={this.deleteRecipe}>Del</Button>
                 </Item>
                 <Modal 
                     open={this.state.modalOpen}
