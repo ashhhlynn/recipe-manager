@@ -1,6 +1,6 @@
 class RecipeIngredientsController < ApplicationController
   
-  skip_before_action :authorize, only: [:index, :create, :destroy, :show]
+  skip_before_action :authorize, only: [:index, :create, :show]
 
   def index
     @recipe_ingredients = RecipeIngredient.all
@@ -28,8 +28,8 @@ class RecipeIngredientsController < ApplicationController
 
   private
 
-
     def recipe_ingredient_params
       params.require(:recipe_ingredient).permit(:name, :recipe_id)
     end
+    
 end

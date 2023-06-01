@@ -29,10 +29,6 @@ class FavoritesController < ApplicationController
 
   private
 
-    def set_favorite
-      @favorite = Favorite.find(params[:id])
-    end
-
     def favorite_params
       params.require(:favorite).permit(:user_id, :recipe_id, :id)
     end
