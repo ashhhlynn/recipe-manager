@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/profile', to: 'users#profile'
   delete '/logout', to: 'sessions#logout'
-
   get '*path',
   to: 'fallback#index',
   constraints: ->(req) { !req.xhr? && req.format.html? }
