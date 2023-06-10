@@ -19,6 +19,11 @@ class Recipe extends Component {
         this.setState({ modalOpen: false });
     }
 
+    handleUpdate = () => {
+        this.props.getUpdate()
+        this.handleClose()
+    }
+
     addToFavorites = () => {
         let id = this.props.recipe.id
         if (!this.props.favorites.find(f=> f.recipe_id === id)) {
@@ -89,7 +94,7 @@ class Recipe extends Component {
                     closeIcon
                 >
                     <Modal.Content >
-                        <RecipeInfo recipe={i} key={i.id} handleClose={this.handleClose} />
+                        <RecipeInfo recipe={i} key={i.id} handleUpdate={this.handleUpdate} />
                     </Modal.Content>
                 </Modal>
             </Card>

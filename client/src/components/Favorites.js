@@ -6,8 +6,12 @@ import Recipe from './Recipe'
 import { fetchFavorites } from "./actions/rootActions"
 
 class Favorites extends Component {     
-       
+
     componentDidMount = () => {
+        this.getFavorites()
+    }
+
+    getFavorites = () => {
         if (this.props.currentUser.length !== 0) {
             fetch("/favorites")
             .then(resp => resp.json())
@@ -20,7 +24,7 @@ class Favorites extends Component {
     render() {
         const recipeGroup = this.props.favorites.map( f => {
             return (
-                <Recipe recipe={f.recipe} key={f.id}/>  
+                <Recipe recipe={f.recipe} getUpdate={this.getFavorites} key={f.id}/>  
             )
         })  
         return (

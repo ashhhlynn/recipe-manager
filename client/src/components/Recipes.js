@@ -11,12 +11,16 @@ import { sortRating } from "./actions/rootActions"
 
 class Recipes extends Component {        
     
-    componentDidMount() {
+    componentDidMount = () => {
         fetch("/recipes")
         .then(resp => resp.json())
         .then(data => {
             this.props.fetchRecipes(data)
         })
+    }
+
+    getMessage = () => {
+        console.log('Recipe rating and reviews updated.')
     }
 
     sortItems = (event) => {
@@ -37,7 +41,7 @@ class Recipes extends Component {
     render() {
         const recipeGroup = this.props.recipes.map( r => {
             return (
-                <Recipe recipe={r} key={r.name}/>
+                <Recipe recipe={r} key={r.name} getUpdate={this.getMessage}/>
             )
         })
         return (

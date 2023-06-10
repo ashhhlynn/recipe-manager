@@ -6,7 +6,7 @@ import CreateReview from './CreateReview'
 class RecipeInfo extends Component {
 
     updateModal = () => {
-        this.props.handleClose()
+        this.props.handleUpdate()
     }
     
     render() {
