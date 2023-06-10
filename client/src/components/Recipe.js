@@ -78,7 +78,7 @@ class Recipe extends Component {
                     </Button>  
                 :        
                     <Button floated="right" onClick={this.addToFavorites} style={{marginTop:"-14%", background:"none"}} >
-                        <Icon style={{color:"#880808", marginLeft:"95%"}}floated="right"  size="large" name="heart"/>
+                        <Icon style={{color:"#702963", marginLeft:"95%"}}floated="right"  size="large" name="heart"/>
                     </Button>   
                 }           
                 <Item>

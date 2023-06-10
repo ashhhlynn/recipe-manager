@@ -9,7 +9,7 @@ class Navbar extends Component {
     render() {
         return (
             <div className="nav" style={{height:"100%"}}>
-                <Menu size="huge" vertical style={{height:"100%", minHeight:"500px", backgroundColor:"#F0f0f0", marginTop:"-5.5%", marginLeft:"-1%"}}>
+                <Menu size="huge" vertical style={{eight:"100%", minHeight:"500px", backgroundColor:"#F0f0f0", marginTop:"-5.5%", marginLeft:"-1%"}}>
                     {this.props.currentUser.length === 0 ?
                         <Reminder /> 
                     :

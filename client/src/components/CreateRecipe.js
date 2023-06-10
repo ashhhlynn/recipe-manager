@@ -97,8 +97,8 @@ class CreateRecipe extends Component {
                             onChange={this.handleChange}
                             />    
                             <h2 >Ingredients</h2>
-                            Click plus button to add ingredient.
-                            <br></br><br></br>
+                            <p>Click plus button to add ingredient.</p>
+                            <br></br>
                             <Item style={{marginLeft: "30%"}}>
                                 <Form.Group>
                                     <Form.Input

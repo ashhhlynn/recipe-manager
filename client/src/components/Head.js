@@ -19,20 +19,20 @@ class Head extends Component {
     render() {
         return (
             <div>
-                <Menu style={{textAlign:"center", opacity:"94%", color:"white", backgroundColor:"#702963", marginBottom:"0%"}} position="middle">
-                    <h3 style={{marginLeft:"39.5%", fontWeight:"normal", fontSize: "16px", marginTop:".75%", letterSpacing: "1px"}}>
+                <Menu style={{opacity:"94%", color:"white", backgroundColor:"#702963"}} position="middle">
+                    <h3 style={{marginLeft:"39.5%",  fontSize: "15px", marginTop:".75%", letterSpacing: "1.3px"}}>
                         recipes with five ingredients or less <Icon size="small" color="yellow" name="heart"/>
                     </h3>
                 </Menu>
-                <Menu borderless icon="labeled" style={{marginTop:"0%"}} >
-                    <h1 style={{fontFamily:"Segoe Print", color: "#702963", fontSize:"40px", marginTop:"1.7%", marginLeft:"3%"}}>
+                <Menu borderless icon="labeled" style={{marginTop:"-1.3%"}} >
+                    <h1 style={{fontFamily:"Segoe Print", color: "#702963", fontSize:"40px", marginTop:"1.6%", marginLeft:"3%"}}>
                         Dash Delish
                     </h1>
                     <Menu.Menu style={{marginTop:"1%", marginRight:"1%"}} position="right">
                         {this.props.currentUser.length === 0 ?
                             <>
                             <Menu.Item><Icon color="grey" size="large" name="user plus"/><Link to ='/signup' style={{marginTop:"-10%", color:"grey", letterSpacing:"1px"}}>sign up</Link></Menu.Item>
-                            <Menu.Item><Icon size="large" color="grey" name="user outline"/><Link to ='/login' style={{marginTop:"-10%", color:"grey", letterSpacing:"1px"}}>sign in</Link></Menu.Item>
+                            <Menu.Item><Icon size="huge" color="grey" name="user circle outline"/><Link to ='/login' style={{marginTop:"-10%",  color:"grey", letterSpacing:"1px"}}>sign in</Link></Menu.Item>
                             </>
                         :
                             <>

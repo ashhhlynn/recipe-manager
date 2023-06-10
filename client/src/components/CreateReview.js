@@ -44,7 +44,6 @@ class CreateReview extends Component {
                 window.alert("Review submission failed.")
             }
             else {
-                console.log(data);
                 window.alert("Review submitted.")
                 this.calculateAverage(number.rating)
             }
