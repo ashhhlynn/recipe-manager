@@ -25,8 +25,8 @@ class Head extends Component {
                     </h3>
                 </Menu>
                 <Menu borderless icon="labeled" style={{marginTop:"-1.3%"}} >
-                    <h1 style={{ color: "#702963", fontSize:"40px", marginTop:"1.6%", marginLeft:"3%"}}>
-                        Dash Delish
+                    <h1 style={{ color: "#702963", fontSize:"38px", marginTop:"1.6%", marginLeft:"3%"}}>
+                        Dash Delicious
                     </h1>
                     <Menu.Menu style={{marginTop:"1%", marginRight:"1%"}} position="right">
                         {this.props.currentUser.length === 0 ?

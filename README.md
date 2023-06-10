@@ -1,4 +1,4 @@
-# Dash Delish
+# Dash Delicious
 
 ## Description
   
