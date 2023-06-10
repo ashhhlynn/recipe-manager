@@ -38,7 +38,6 @@ class RecipeInfo extends Component {
                     <RecipeReviews reviews={this.props.recipe.reviews} />
                     <br></br>
                     <CreateReview recipe={this.props.recipe} 
-                        addReviewClick={this.addReview} 
                         updateModalClick={this.updateModal}
                     />
                     <br></br>
