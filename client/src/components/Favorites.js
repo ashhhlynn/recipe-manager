@@ -5,8 +5,8 @@ import Navbar from './Navbar'
 import Recipe from './Recipe'
 import { fetchFavorites } from "./actions/rootActions"
 
-class Favorites extends Component {        
-
+class Favorites extends Component {     
+       
     componentDidMount = () => {
         if (this.props.currentUser.length !== 0) {
             fetch("/favorites")
@@ -16,7 +16,7 @@ class Favorites extends Component {
             })
         }
     }
-  
+
     render() {
         const recipeGroup = this.props.favorites.map( f => {
             return (

@@ -4,7 +4,7 @@ import { Rating} from 'semantic-ui-react'
 class RecipeReviews extends Component {
 
     render() {
-        const reviews = this.props.recipe.reviews.map(r => {           
+        const reviews = this.props.reviews.map(r => {           
             return(
                 <div key={r.text}>
                     <Rating size="small" key={r.recipe_id} rating={r.score} disabled maxRating={5} /> 

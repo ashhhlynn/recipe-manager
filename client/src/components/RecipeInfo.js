@@ -5,7 +5,9 @@ import CreateReview from './CreateReview'
 
 class RecipeInfo extends Component {
 
-    state = {}
+    updateModal = () => {
+        this.props.handleClose()
+    }
     
     render() {
         const recipe_ingredients = this.props.recipe.recipe_ingredients.map(ri => {
@@ -33,9 +35,12 @@ class RecipeInfo extends Component {
                 </Grid>
                 <Segment style={{marginLeft:"-2%", marginRight:"-2%"}} placeholder>
                     <h2>Reviews</h2>
-                    <RecipeReviews recipe={this.props.recipe} />
+                    <RecipeReviews reviews={this.props.recipe.reviews} />
                     <br></br>
-                    <CreateReview recipe={this.props.recipe}/>
+                    <CreateReview recipe={this.props.recipe} 
+                        addReviewClick={this.addReview} 
+                        updateModalClick={this.updateModal}
+                    />
                     <br></br>
                 </Segment>
             </center>  

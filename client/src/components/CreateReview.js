@@ -23,6 +23,7 @@ class CreateReview extends Component {
         .then((response) => response.json())
         .then(data => {
             this.props.updateRR(data)
+            this.props.updateModalClick()
         })   
     }
 
