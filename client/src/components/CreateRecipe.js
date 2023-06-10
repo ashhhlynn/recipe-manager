@@ -55,7 +55,6 @@ class CreateRecipe extends Component {
                     window.alert("Recipe submission failed.")
                 }
             else {
-                console.log(data);    
                 window.alert("Recipe created.")
             }
         })
@@ -70,7 +69,7 @@ class CreateRecipe extends Component {
                     </Grid.Column>
                     <Grid.Column>
                         <Segment style={{marginLeft:"29.5%", marginTop:"2%", width:"615px"}}>
-                            <h1 style={{ fontFamily:"Segoe Print", marginTop:"1.5%"}}>Share Recipe</h1>
+                            <h1 style={{ marginTop:"1.5%"}}>Share Recipe</h1>
                             <Form success onSubmit= { (event) => {this.handleSubmit(event, this.state)}}>
                             <Form.Input
                             required
@@ -152,7 +151,7 @@ class CreateRecipe extends Component {
                                     <Button id="ingredient5" basic color="grey" onClick={this.addIngredient} >+</Button>
                                 </Form.Group>
                             </Item> 
-                            <Form.Button circular style={{marginTop:"5%", letterSpacing: "1px"}} className="formButtons" content='Save Recipe'/>        
+                            <Form.Button circular style={{marginTop:"5%"}} content='Save Recipe'/>        
                             <br></br>
                             </Form> 
                         </Segment>           

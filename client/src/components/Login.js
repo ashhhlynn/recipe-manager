@@ -50,7 +50,7 @@ class Login extends Component {
                     </Grid.Column>
                     <Grid.Column>
                         <Segment style={{marginLeft:"28%", marginTop:"5%", width:"615px"}}>
-                            <h1 style={{fontFamily:"Segoe Print"}}>Sign In</h1>
+                            <h1>Sign In</h1>
                             <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
                                 <Form.Input
                                 required
@@ -67,7 +67,7 @@ class Login extends Component {
                                 value={this.state.password} 
                                 onChange={this.handleChange}
                                 /> 
-                                <Form.Button style={{letterSpacing:"1px"}} circular content='Submit' />
+                                <Form.Button circular content='Submit' />
                             </Form>
                         </Segment>    
                     </Grid.Column>

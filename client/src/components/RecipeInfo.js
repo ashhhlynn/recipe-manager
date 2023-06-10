@@ -15,24 +15,20 @@ class RecipeInfo extends Component {
         })
         return (         
             <center>
-                <h1 style={{fontFamily:"Segoe Print"}}>{this.props.recipe.name}</h1>
+                <h1 style={{fontWeight:"normal"}}>{this.props.recipe.name}</h1>
                 <Rating size="massive" key={this.props.recipe.id} rating={this.props.recipe.average} disabled maxRating={5} />
                 <Divider></Divider>
                 <Grid stackable columns={2}>
                     <Grid.Column > 
                         <br></br>
-                        <center>
-                            <Image size="medium" src={this.props.recipe.image_url}/>
-                        </center>
+                        <Image size="medium" src={this.props.recipe.image_url}/>
                     </Grid.Column>
                     <Grid.Column>
-                        <center>
-                            <Item style={{marginRight:"17%"}}>
-                                <h2>Ingredients</h2>
-                                <h3 style={{fontWeight:"normal"}}>{recipe_ingredients}</h3>
-                                <h3 style={{fontWeight:"normal"}}>Instructions: {this.props.recipe.description}</h3><br></br>
-                            </Item>
-                        </center>
+                        <Item style={{marginRight:"17%"}}>
+                            <h2>Ingredients</h2>
+                            <h3>{recipe_ingredients}</h3>
+                            <h3>Instructions: {this.props.recipe.description}</h3><br></br>
+                        </Item>
                     </Grid.Column>
                 </Grid>
                 <Segment style={{marginLeft:"-2%", marginRight:"-2%"}} placeholder>

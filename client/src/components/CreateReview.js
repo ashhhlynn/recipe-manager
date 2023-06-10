@@ -5,7 +5,7 @@ import { updateRR } from "./actions/rootActions"
 
 class CreateReview extends Component {
 
-    state = {}
+    state = { rating: 0 }
 
     calculateAverage = (number) => {
         let reviews = this.props.recipe.reviews.map(r => r.score)
@@ -22,7 +22,6 @@ class CreateReview extends Component {
         })
         .then((response) => response.json())
         .then(data => {
-            console.log(data);
             this.props.updateRR(data)
         })   
     }
@@ -73,7 +72,7 @@ class CreateReview extends Component {
                         value={this.state.text} 
                         onChange={this.handleChange}
                     />
-                    <Form.Button circular style={{letterSpacing: "1px", width:"130px", color:"white" }}className="formButtons" content='Submit'/>        
+                    <Form.Button circular style={{width:"130px"}}className="formButtons" content='Submit'/>        
                 </Form>   
             </center>
             </>

@@ -48,10 +48,10 @@ class Recipes extends Component {
                     </Grid.Column>
                     <Grid.Column>  
                         <Item style={{width:"850px", marginLeft:"9%"}}> 
-                            <Button id="3" style={{letterSpacing: "1px"}} circular onClick={(event)=>{this.sortItems(event)}}>name</Button> 
-                            <Button id="2" style={{letterSpacing: "1px"}} circular onClick={(event)=>{this.sortItems(event)}}>date</Button> 
-                            <Button id="1" style={{letterSpacing: "1px"}} circular onClick={(event)=>{this.sortItems(event)}}>rating</Button> 
-                            <Button id="4" style={{letterSpacing: "1px"}} circular onClick={(event)=>{this.sortItems(event)}}>reviews</Button> 
+                            <Button id="3" circular onClick={(event)=>{this.sortItems(event)}}>name</Button> 
+                            <Button id="2" circular onClick={(event)=>{this.sortItems(event)}}>date</Button> 
+                            <Button id="1" circular onClick={(event)=>{this.sortItems(event)}}>rating</Button> 
+                            <Button id="4" circular onClick={(event)=>{this.sortItems(event)}}>reviews</Button> 
                         </Item>
                         <Card.Group itemsPerRow={3} style={{width:"890px", marginTop: "1%", marginLeft:"6.2%"}}>
                             {recipeGroup}

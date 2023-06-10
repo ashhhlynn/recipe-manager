@@ -20,12 +20,12 @@ class Head extends Component {
         return (
             <div>
                 <Menu style={{opacity:"94%", color:"white", backgroundColor:"#702963"}} position="middle">
-                    <h3 style={{marginLeft:"39.5%",  fontSize: "15px", marginTop:".75%", letterSpacing: "1.3px"}}>
+                    <h3 style={{marginLeft:"40%",  fontSize: "14px", marginTop:".75%"}}>
                         recipes with five ingredients or less <Icon size="small" color="yellow" name="heart"/>
                     </h3>
                 </Menu>
                 <Menu borderless icon="labeled" style={{marginTop:"-1.3%"}} >
-                    <h1 style={{fontFamily:"Segoe Print", color: "#702963", fontSize:"40px", marginTop:"1.6%", marginLeft:"3%"}}>
+                    <h1 style={{ color: "#702963", fontSize:"40px", marginTop:"1.6%", marginLeft:"3%"}}>
                         Dash Delish
                     </h1>
                     <Menu.Menu style={{marginTop:"1%", marginRight:"1%"}} position="right">
