@@ -22,6 +22,7 @@ A content management application for recipes with five ingredients or less. Crea
 
 - Ruby 
 - Rails
+- JavaScript
 - React
 - Redux
 - Semantic UI React
