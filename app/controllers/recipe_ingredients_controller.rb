@@ -1,6 +1,6 @@
 class RecipeIngredientsController < ApplicationController
   
-  skip_before_action :authorize, only: [:index, :create, :show]
+  skip_before_action :authorize, only: [:index, :show]
 
   def index
     @recipe_ingredients = RecipeIngredient.all

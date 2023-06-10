@@ -14,7 +14,6 @@ class FavoritesController < ApplicationController
 
   def create
     @favorite = Favorite.create(favorite_params)
-    @recipe = @favorite.recipe
     if @favorite.valid?
       render json: @favorite, include: [:recipe],  status: :created
     else
