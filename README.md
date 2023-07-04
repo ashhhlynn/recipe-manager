@@ -16,7 +16,7 @@ A content management application for recipes with five ingredients or less. Crea
 
 - Users can write recipe reviews and rate recipes. 
 
-- Users can store recipes under a personal favorites list. 
+- Users can store and remove recipes under a personal favorites list. 
 
 ## Tech Stack
 
