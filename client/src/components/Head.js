@@ -19,14 +19,9 @@ class Head extends Component {
     render() {
         return (
             <div>
-                <Menu style={{opacity:"94%", color:"white", backgroundColor:"#702963"}} position="middle">
-                    <h3 style={{marginLeft:"40%",  fontSize: "14px", marginTop:".75%"}}>
-                        recipes with five ingredients or less <Icon size="small" color="yellow" name="heart"/>
-                    </h3>
-                </Menu>
-                <Menu borderless icon="labeled" style={{marginTop:"-1.3%"}} >
-                    <h1 style={{ color: "#702963", fontSize:"38px", marginTop:"1.6%", marginLeft:"3%"}}>
-                        Dash Delicious
+                <Menu borderless icon="labeled" style={{marginTop:"-.6%"}} >
+                    <h1 style={{ fontFamily: "Segoe Print", color: "#702963", fontSize:"38px", marginTop:"1.6%", marginLeft:"3%"}}>
+                        Dash Dish
                     </h1>
                     <Menu.Menu style={{marginTop:"1%", marginRight:"1%"}} position="right">
                         {this.props.currentUser.length === 0 ?
@@ -41,6 +36,11 @@ class Head extends Component {
                         }
                     </Menu.Menu>
                 </Menu>
+                <div className="picture">
+                    <h1 style={{letterSpacing:"1px", color:"black"}}><br></br><br></br><br></br><br></br><b>
+                    Recipe Manager<br></br>
+                    Five or Less Ingredients</b></h1>
+                </div>
             </div>
         )
     }

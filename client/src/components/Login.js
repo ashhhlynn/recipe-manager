@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
-import { Form, Grid, Segment} from 'semantic-ui-react'
-import Navbar from './Navbar'
+import { Form, Button, Segment} from 'semantic-ui-react'
 import { checkUser } from "./actions/rootActions"
+import { Link } from 'react-router-dom'
 
 class Login extends Component {
 
@@ -43,14 +43,10 @@ class Login extends Component {
     render() {
         return (
             <>          
-            <Segment style={{height:"100%", marginLeft:"-7%", marginRight:"-6.5%", marginTop:"-1.4%" }}>
-                <Grid stackable columns={2} >
-                    <Grid.Column style={{width:"300px"}}> 
-                        <Navbar/>
-                    </Grid.Column>
-                    <Grid.Column>
-                        <Segment style={{marginLeft:"28%", marginTop:"5%", width:"615px"}}>
+            <Segment style={{marginLeft:"28%", marginTop:"5%", width:"615px"}}>
                             <h1>Sign In</h1>
+                            <p>Haven't made an account? <Button circular basic size="small" as={Link} to='/signup'>Sign Up</Button></p>
+
                             <Form onSubmit={ (event) => { this.handleSubmit(event, this.state)}}>
                                 <Form.Input
                                 required
@@ -70,13 +66,17 @@ class Login extends Component {
                                 <Form.Button circular content='Submit' />
                             </Form>
                         </Segment>    
-                    </Grid.Column>
-                </Grid>
-            </Segment>
+                   
             </>
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return { 
+    }
+}
+
 
 const mapDispatchToProps = (dispatch) => {
     return { 
@@ -85,4 +85,4 @@ const mapDispatchToProps = (dispatch) => {
 }
   
 
-export default connect(null, mapDispatchToProps)(Login)
+export default connect(mapStateToProps, mapDispatchToProps)(Login)

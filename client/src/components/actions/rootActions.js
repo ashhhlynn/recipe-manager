@@ -4,6 +4,12 @@ export const fetchRecipes = (recipes) => {
     }
 }
 
+export const fetchCategories = (categories) => {
+    return (dispatch) => {
+        dispatch({ type: "FETCH_CATEGORIES", categories: categories })     
+    }
+}
+
 export const fetchFavorites = (favorites) => {
     return (dispatch) => {
         dispatch({ type: "FETCH_FAVORITES", favorites: favorites })
@@ -37,6 +43,12 @@ export const sortDate = () => {
 export const sortRating = () => {
     return (dispatch) => {
         dispatch({ type: "SORT_RATING" })
+    }
+}
+
+export const sortCategory = (id) => {
+    return (dispatch) => {
+        dispatch({ type: "SORT_CATEGORY", id: id })
     }
 }
 

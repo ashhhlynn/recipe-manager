@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Item, Image, Grid, Rating, Segment, Divider } from 'semantic-ui-react'
+import { Item, Image, Grid, Rating, Button, Divider } from 'semantic-ui-react'
 import RecipeReviews from './RecipeReviews'
 import CreateReview from './CreateReview'
+import { connect } from "react-redux"
 
 class RecipeInfo extends Component {
 
@@ -17,9 +18,6 @@ class RecipeInfo extends Component {
         })
         return (         
             <center>
-                <h1 style={{fontWeight:"normal"}}>{this.props.recipe.name}</h1>
-                <Rating size="massive" key={this.props.recipe.id} rating={this.props.recipe.average} disabled maxRating={5} />
-                <Divider></Divider>
                 <Grid stackable columns={2}>
                     <Grid.Column > 
                         <br></br>
@@ -27,24 +25,55 @@ class RecipeInfo extends Component {
                     </Grid.Column>
                     <Grid.Column>
                         <Item style={{marginRight:"17%"}}>
-                            <h2>Ingredients</h2>
-                            <h3>{recipe_ingredients}</h3>
-                            <h3>Instructions: {this.props.recipe.description}</h3><br></br>
+                            <h1 style={{fontWeight:"normal", marginTop:"3%"}}>{this.props.recipe.name}
+                            {this.props.favorites.find(r => r.recipe_id == this.props.recipe.id) ?
+                                <>
+                                <Button onClick={this.props.removeFavorite} circular floated="right">Remove</Button>
+                                </>
+                            :
+                                <>
+                                <Button onClick={this.props.addToFavorites} circular floated="right" >Save</Button>
+                                </>
+                            }
+                            </h1>
+                            <Rating style={{marginTop:"-6%"}} size="huge" key={this.props.recipe.id} rating={this.props.recipe.average} disabled maxRating={5} />
+                            <Divider></Divider>
+                            <br></br>
+                            <CreateReview recipe={this.props.recipe} 
+                            updateModalClick={this.updateModal}
+                            />
                         </Item>
                     </Grid.Column>
                 </Grid>
-                <Segment style={{marginLeft:"-2%", marginRight:"-2%"}} placeholder>
-                    <h2>Reviews</h2>
-                    <RecipeReviews reviews={this.props.recipe.reviews} />
-                    <br></br>
-                    <CreateReview recipe={this.props.recipe} 
-                        updateModalClick={this.updateModal}
-                    />
-                    <br></br>
-                </Segment>
+                <br></br>
+                <Divider></Divider>
+                <Item style={{textAlign:"left", marginLeft:"10%", marginRight:"10%"}}>
+                    <h3><b>ingredients</b></h3>
+                    <h4 style={{marginTop:"-.25%"}}>{recipe_ingredients}</h4>
+                    <Divider></Divider>
+                    <h3 style={{marginTop:"-.25%"}}><b>instructions</b></h3>
+                    <h4 style={{marginTop:"-.25%"}}>{this.props.recipe.description}</h4> 
+                    <Divider></Divider>
+                    <h3 style={{marginTop:"-.25%"}}><b>reviews</b></h3>
+                    {this.props.recipe.reviews.length !== 0 ?
+                        <>
+                        <Divider></Divider>
+                        <RecipeReviews reviews={this.props.recipe.reviews} />
+                        </>
+                    :
+                        <h4 style={{marginTop:"-.25%"}}>This recipe has not been reviewed yet.</h4>
+                    }
+                </Item>  
             </center>  
         )
     }
 }
 
-export default RecipeInfo
+const mapStateToProps = (state) => {
+    return { 
+        favorites: state.favorites,
+        currentUser: state.currentUser
+    }
+}
+
+export default connect(mapStateToProps)(RecipeInfo)

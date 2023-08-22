@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { Button, Grid, Segment, Card, Item } from 'semantic-ui-react'
+import { Button, Card,  Item, Search } from 'semantic-ui-react'
 import { connect } from "react-redux"
-import Navbar from './Navbar'
 import Recipe from './Recipe'
 import { fetchRecipes } from "./actions/rootActions"
 import { sortAToZ } from "./actions/rootActions"
@@ -10,7 +9,7 @@ import { sortDate } from "./actions/rootActions"
 import { sortRating } from "./actions/rootActions"
 
 class Recipes extends Component {        
-    
+
     componentDidMount = () => {
         fetch("/recipes")
         .then(resp => resp.json())
@@ -45,24 +44,24 @@ class Recipes extends Component {
             )
         })
         return (
-            <Segment style={{ height:"100%", marginLeft:"-7%", marginRight:"-6.5%", marginTop:"-1.4%" }}>
-                <Grid stackable columns={2} >
-                    <Grid.Column style={{width:"300px"}}> 
-                        <Navbar/>
-                    </Grid.Column>
-                    <Grid.Column>  
-                        <Item style={{width:"850px", marginLeft:"9%"}}> 
+            <>
+                        <Item style={{backgroundColor:"#f0e9ef", width:"850px", marginLeft:"9%"}}> 
+                            <br></br>
+                            <h2 style={{marginTop:"-1%"}}>Sort Recipes</h2>
                             <Button id="3" circular onClick={(event)=>{this.sortItems(event)}}>name</Button> 
                             <Button id="2" circular onClick={(event)=>{this.sortItems(event)}}>date</Button> 
                             <Button id="1" circular onClick={(event)=>{this.sortItems(event)}}>rating</Button> 
                             <Button id="4" circular onClick={(event)=>{this.sortItems(event)}}>reviews</Button> 
+                            <Search style={{marginTop:"2%"}}floated="right" placeholder="Search Recipes...">
+                            </Search>
+                            <br></br>
                         </Item>
+                        <br></br>
                         <Card.Group itemsPerRow={3} style={{width:"890px", marginTop: "1%", marginLeft:"6.2%"}}>
                             {recipeGroup}
                         </Card.Group>
-                    </Grid.Column>
-                </Grid>
-            </Segment>
+                        </>
+                
         )     
     }
 

@@ -35,7 +35,7 @@ class CreateReview extends Component {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                score: number.rating, recipe_id: this.props.recipe.id, text: number.text
+                score: number.rating, recipe_id: this.props.recipe.id, text: number.text, user_id: this.props.currentUser.username
             })
         })
         .then((response) => response.json())
@@ -63,21 +63,27 @@ class CreateReview extends Component {
         return (
             <>
             <center>                   
-                <Form onSubmit= { (event) => {this.handleSubmitRating(event, this.state)} }>
-                    <Rating color="purple" size="massive" maxRating={5} onRate={this.handleRating} />
+                <Form style={{marginTop:"-2%"}}onSubmit= { (event) => {this.handleSubmitRating(event, this.state)} }>
                     <Form.TextArea
                         style={{width:"300px"}}
                         type="text"
                         id="text"
-                        placeholder=""
+                        placeholder="Write Review..."
                         value={this.state.text} 
                         onChange={this.handleChange}
                     />
-                    <Form.Button circular style={{width:"130px"}}className="formButtons" content='Submit'/>        
+                    <Rating color="purple" size="massive" maxRating={5} onRate={this.handleRating} />
+                    <Form.Button circular basic color="black" style={{width:"130px", marginTop:"3%"}}className="formButtons" content='Submit'/>        
                 </Form>   
             </center>
             </>
         )
+    }
+}
+
+const mapStateToProps = (state) => {
+    return { 
+       currentUser: state.currentUser,
     }
 }
 
@@ -87,4 +93,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(CreateReview)
+export default connect(mapStateToProps, mapDispatchToProps)(CreateReview)

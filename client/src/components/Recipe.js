@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Card, Modal, Icon, Image, Item, Rating } from 'semantic-ui-react'
+import {  Card, Modal,  Image, Item, Rating } from 'semantic-ui-react'
 import { connect } from "react-redux"
 import RecipeInfo from './RecipeInfo'
 import { addToFavorites } from "./actions/rootActions"
@@ -73,18 +73,10 @@ class Recipe extends Component {
             <>
             <Card>
                 <Image style={{cursor:"pointer", width:"270px", height:"260px"}} src= {i.image_url} onClick={this.handleOpen}/>
-                <h3 style={{fontFamily:"Segoe Print", fontSize:"19px", marginTop: "2%", marginBottom:"2%"}}>
+                <h3 style={{fontSize:"19px", marginTop: "2%", marginBottom:"2%"}}>
                     {i.name}                   
                 </h3>
-                {this.props.favorites.find(f=> parseInt(f.recipe_id) === i.id) ?
-                    <Button floated="right" onClick={this.removeFavorite} style={{marginTop:"-14%", background:"none"}} >
-                        <Icon style={{color:"grey", marginLeft:"95%"}}floated="right"  size="large"  name="close"/>
-                    </Button>  
-                :        
-                    <Button floated="right" onClick={this.addToFavorites} style={{marginTop:"-14%", background:"none"}} >
-                        <Icon style={{color:"#702963", marginLeft:"95%"}}floated="right"  size="large" name="heart"/>
-                    </Button>   
-                }           
+                  
                 <Item>
                     <Rating size="small" rating={i.average} disabled maxRating={5} />
                 </Item>
@@ -94,7 +86,7 @@ class Recipe extends Component {
                     closeIcon
                 >
                     <Modal.Content >
-                        <RecipeInfo recipe={i} key={i.id} handleUpdate={this.handleUpdate} />
+                        <RecipeInfo addToFavorites={this.addToFavorites} removeFavorite={this.removeFavorite} recipe={i} key={i.id} handleUpdate={this.handleUpdate} />
                     </Modal.Content>
                 </Modal>
             </Card>

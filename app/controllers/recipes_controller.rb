@@ -43,7 +43,7 @@ class RecipesController < ApplicationController
   private
 
     def recipe_params
-      params.require(:recipe).permit(:average, :name, :user_id, :image_url, :description, :recipe_ingredients => [:recipe_id, :name, :id])
+      params.require(:recipe).permit(:average, :name, :user_id, :image_url, :description, :category_id, :recipe_ingredients => [:recipe_id, :name, :id])
     end
 
   end

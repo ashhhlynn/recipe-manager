@@ -3,7 +3,7 @@
   font-family: "Lato" !important;
 }
 
-h2, p, h3 {
+h2, p, h3, h4 {
   font-weight: normal !important;
   letter-spacing: .5px !important;
 }
@@ -16,5 +16,18 @@ h2, p, h3 {
 }
 
 h1 {
-  font-family: "Segoe Print" !important;
+  font-weight: normal !important;
+}
+
+.picture {
+  background-repeat: no-repeat;
+	width: 1260px;
+	height: 340px;
+	background-position-y: 91%;
+	background-position-x: 0%;
+	background-size: cover;
+	margin: auto;
+	object-fit: cover;
+  margin-top:-1%;
+	background-image: url("https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/AN_images/healthy-eating-ingredients-1296x728-header.jpg?w=1155&h=1528");
 }

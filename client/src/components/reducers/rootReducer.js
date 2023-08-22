@@ -3,6 +3,8 @@ const initialState = {
     currentUser: [],
     loading: false,
     favorites: [],
+    categories: [],
+    allRecipes: []
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -13,7 +15,15 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 recipes: action.recipes,
                 loading: false,
+                allRecipes: action.recipes
             };
+
+            case "FETCH_CATEGORIES":
+                return {
+                    ...state,
+                    categories: action.categories,
+                    loading: false,
+                };
 
         case 'FETCH_FAVORITES':
             console.log(action.favorites)
@@ -56,6 +66,16 @@ const rootReducer = (state = initialState, action) => {
                 recipes: [...state.recipes.slice().sort((item1, item2) => item2.average > item1.average ? 1 : -1)]
             }; 
         
+            case "SORT_CATEGORY":
+                console.log(action.id)
+                console.log(state.recipes)
+                let r = state.allRecipes.filter(r => r.category_id == action.id)
+                console.log(r)
+                return {
+                    ...state,
+                recipes: r
+                }; 
+
         case "ADD_TO_FAVORITES":
             return {
                 ...state,

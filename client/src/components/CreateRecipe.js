@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Form, Grid, Button,  Segment, Item } from 'semantic-ui-react'
-import Navbar from './Navbar'
+import { Form, Button, Dropdown, Segment, Item } from 'semantic-ui-react'
+import { connect } from "react-redux"
 
 class CreateRecipe extends Component {
 
@@ -14,8 +14,10 @@ class CreateRecipe extends Component {
         ingredient3: '',
         ingredient4: '',
         ingredient5: '',
-        recipe_ingredients: []
-    }
+        recipe_ingredients: [],
+        category_id: '',
+        category_name: 'Category'
+    }   
 
     addIngredient = (event) => {
         event.preventDefault()
@@ -30,6 +32,13 @@ class CreateRecipe extends Component {
     handleChange = (event) => {
         this.setState ({
             [event.target.id]: event.target.value
+        })
+    }
+
+    handleCategory = (c) => {
+        this.setState ({
+            category_id: c.id,
+            category_name: c.title
         })
     }
     
@@ -47,6 +56,7 @@ class CreateRecipe extends Component {
                 image_url: recipe.image_url, 
                 average: 0, 
                 recipe_ingredients: recipe.recipe_ingredients,
+                category_id: recipe.category_id,
             })
         })
         .then((response) => response.json())
@@ -61,16 +71,20 @@ class CreateRecipe extends Component {
     }          
 
     render() {
+        let categories = this.props.categories.map(c => {
+            return (
+                <>
+                <p style={{cursor:"pointer"}} id={c.id} onClick={ () => {this.handleCategory(c)} } >{c.title}</p><br></br>
+                </>
+            )
+        })
         return ( 
-            <Segment style={{height:"100%", marginLeft:"-7%", marginRight:"-6.5%", marginTop:"-1.4%" }}>
-                <Grid stackable columns={2} >
-                    <Grid.Column style={{width:"300px"}}> 
-                        <Navbar />
-                    </Grid.Column>
-                    <Grid.Column>
-                        <Segment style={{marginLeft:"29.5%", marginTop:"2%", width:"615px"}}>
+            <>
+            
+            
+                        <Segment style={{backgroundColor:"#f0e9ef", marginLeft:"29.5%",   marginTop:"2%", width:"615px"}}>
                             <h1 style={{ marginTop:"1.5%"}}>Share Recipe</h1>
-                            <Form success onSubmit= { (event) => {this.handleSubmit(event, this.state)}}>
+                            <Form style={{backgroundColor:"#f0e9ef"}}success onSubmit= { (event) => {this.handleSubmit(event, this.state)}}>
                             <Form.Input
                             required
                             type="text"
@@ -95,6 +109,12 @@ class CreateRecipe extends Component {
                             value={this.state.description} 
                             onChange={this.handleChange}
                             />    
+                            <Dropdown
+                            fluid
+                            placeholder={this.state.category_name}
+                            selection
+                            options={categories}
+                            />
                             <h2 >Ingredients</h2>
                             <p>Click plus button to add ingredient.</p>
                             <br></br>
@@ -108,7 +128,7 @@ class CreateRecipe extends Component {
                                     value={this.state.ingredient1} 
                                     onChange={this.handleChange}
                                     />                    
-                                    <Button id="ingredient1" basic color="grey" onClick={this.addIngredient} >+</Button>
+                                    <Button id="ingredient1" color="grey" style={{backgroundColor:"white", color:"black"}} onClick={this.addIngredient} >+</Button>
                                 </Form.Group>
                                 <Form.Group>
                                     <Form.Input
@@ -118,7 +138,7 @@ class CreateRecipe extends Component {
                                     value={this.state.ingredient2} 
                                     onChange={this.handleChange}
                                     />
-                                    <Button id="ingredient2" basic color="grey" onClick={this.addIngredient} >+</Button>
+                                    <Button id="ingredient2" style={{backgroundColor:"white", color:"black"}} color="grey" onClick={this.addIngredient} >+</Button>
                                 </Form.Group>
                                 <Form.Group>
                                     <Form.Input                       
@@ -128,7 +148,7 @@ class CreateRecipe extends Component {
                                     value={this.state.ingredient3} 
                                     onChange={this.handleChange}
                                     />
-                                    <Button id="ingredient3" basic color="grey" onClick={this.addIngredient} >+</Button>
+                                    <Button id="ingredient3" style={{backgroundColor:"white", color:"black"}}  color="grey" onClick={this.addIngredient} >+</Button>
                                 </Form.Group>
                                 <Form.Group>
                                     <Form.Input
@@ -138,7 +158,7 @@ class CreateRecipe extends Component {
                                     value={this.state.ingredient4} 
                                     onChange={this.handleChange}
                                     />
-                                    <Button id="ingredient4" basic color="grey" onClick={this.addIngredient} >+</Button>
+                                    <Button id="ingredient4" style={{backgroundColor:"white", color:"black"}}  color="grey" onClick={this.addIngredient} >+</Button>
                                 </Form.Group>
                                 <Form.Group>
                                     <Form.Input
@@ -148,18 +168,22 @@ class CreateRecipe extends Component {
                                     value={this.state.ingredient5} 
                                     onChange={this.handleChange}
                                     />
-                                    <Button id="ingredient5" basic color="grey" onClick={this.addIngredient} >+</Button>
+                                    <Button id="ingredient5" style={{backgroundColor:"white", color:"black"}} color="grey" onClick={this.addIngredient} >+</Button>
                                 </Form.Group>
                             </Item> 
                             <Form.Button circular style={{marginTop:"5%"}} content='Save Recipe'/>        
                             <br></br>
-                            </Form> 
+                            </Form>                     
                         </Segment>           
-                    </Grid.Column>
-                </Grid>
-            </Segment>
+                    
+            </>
         )
     }
 }
 
-export default CreateRecipe
+const mapStateToProps = (state) => {
+    return { 
+    }
+}
+
+export default connect(mapStateToProps)(CreateRecipe)

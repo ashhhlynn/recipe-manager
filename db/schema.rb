@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_30_062129) do
+ActiveRecord::Schema.define(version: 2023_08_21_235260) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "favorites", force: :cascade do |t|
     t.string "user_id"
@@ -37,6 +43,8 @@ ActiveRecord::Schema.define(version: 2023_05_30_062129) do
     t.float "average"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_recipes_on_category_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -56,4 +64,5 @@ ActiveRecord::Schema.define(version: 2023_05_30_062129) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "recipes", "categories"
 end
