@@ -1,4 +1,4 @@
-# Dash Delicious
+# Dash Dish
 
 ## Description
   
@@ -9,6 +9,8 @@ A content management application for recipes with five ingredients or less. Crea
 - Users can create accounts and sign in, authenticated and authorized through BCrypt.
 
 - Users can view recipes and sort by alphabetical order, date, number of reviews, and highest rating.
+
+- Users can search recipes by title and filter by category.
 
 - Users can view recipe reviews.
 

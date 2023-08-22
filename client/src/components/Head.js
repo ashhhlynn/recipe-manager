@@ -26,7 +26,6 @@ class Head extends Component {
                     <Menu.Menu style={{marginTop:"1%", marginRight:"1%"}} position="right">
                         {this.props.currentUser.length === 0 ?
                             <>
-                            <Menu.Item><Icon color="grey" size="large" name="user plus"/><Link to ='/signup' style={{marginTop:"-10%", color:"grey", letterSpacing:"1px"}}>sign up</Link></Menu.Item>
                             <Menu.Item><Icon size="huge" color="grey" name="user circle outline"/><Link to ='/login' style={{marginTop:"-10%",  color:"grey", letterSpacing:"1px"}}>sign in</Link></Menu.Item>
                             </>
                         :
