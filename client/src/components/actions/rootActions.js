@@ -52,6 +52,12 @@ export const sortCategory = (id) => {
     }
 }
 
+export const recipeSearch = (recipes) => {
+    return (dispatch) => {
+        dispatch({ type: "RECIPE_SEARCH", recipes: recipes })
+    }
+}
+
 export const addToFavorites = (recipe) => {
     return (dispatch) => {
         dispatch({ type: "ADD_TO_FAVORITES", recipe: recipe })     

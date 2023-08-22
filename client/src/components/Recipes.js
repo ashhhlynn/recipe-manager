@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Card,  Item, Search } from 'semantic-ui-react'
+import { Button, Card,  Item  } from 'semantic-ui-react'
 import { connect } from "react-redux"
 import Recipe from './Recipe'
 import { fetchRecipes } from "./actions/rootActions"
@@ -7,6 +7,8 @@ import { sortAToZ } from "./actions/rootActions"
 import { sortNumberReviews } from "./actions/rootActions"
 import { sortDate } from "./actions/rootActions"
 import { sortRating } from "./actions/rootActions"
+import { recipeSearch } from "./actions/rootActions"
+import RecipeSearch from './RecipeSearch'
 
 class Recipes extends Component {        
 
@@ -37,6 +39,10 @@ class Recipes extends Component {
         }
     }
 
+    searchRecipes = (recipes) => {
+        this.props.recipeSearch(recipes)
+    }
+
     render() {
         const recipeGroup = this.props.recipes.map( r => {
             return (
@@ -45,15 +51,14 @@ class Recipes extends Component {
         })
         return (
             <>
-                        <Item style={{backgroundColor:"#f0e9ef", width:"850px", marginLeft:"9%"}}> 
+                        <Item style={{marginTop:"2.5%", backgroundColor:"#f0e9ef", width:"850px", marginLeft:"9%"}}> 
                             <br></br>
                             <h2 style={{marginTop:"-1%"}}>Sort Recipes</h2>
                             <Button id="3" circular onClick={(event)=>{this.sortItems(event)}}>name</Button> 
                             <Button id="2" circular onClick={(event)=>{this.sortItems(event)}}>date</Button> 
                             <Button id="1" circular onClick={(event)=>{this.sortItems(event)}}>rating</Button> 
                             <Button id="4" circular onClick={(event)=>{this.sortItems(event)}}>reviews</Button> 
-                            <Search style={{marginTop:"2%"}}floated="right" placeholder="Search Recipes...">
-                            </Search>
+                            <RecipeSearch searchRecipes={this.searchRecipes} recipes={this.props.allRecipes}/>
                             <br></br>
                         </Item>
                         <br></br>
@@ -70,6 +75,7 @@ class Recipes extends Component {
 const mapStateToProps = (state) => {
     return { 
         recipes: state.recipes,
+        allRecipes: state.allRecipes
     }
 }
 
@@ -80,6 +86,8 @@ const mapDispatchToProps = (dispatch) => {
         sortNumberReviews: () =>  { dispatch(sortNumberReviews()) },
         sortDate: () =>  { dispatch(sortDate()) },
         sortRating: () =>  { dispatch(sortRating()) },
+        recipeSearch: (recipes) =>  { dispatch(recipeSearch(recipes)) },
+
     }
 }
 

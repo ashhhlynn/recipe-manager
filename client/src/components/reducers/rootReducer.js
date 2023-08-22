@@ -66,16 +66,19 @@ const rootReducer = (state = initialState, action) => {
                 recipes: [...state.recipes.slice().sort((item1, item2) => item2.average > item1.average ? 1 : -1)]
             }; 
         
-            case "SORT_CATEGORY":
-                console.log(action.id)
-                console.log(state.recipes)
-                let r = state.allRecipes.filter(r => r.category_id == action.id)
-                console.log(r)
-                return {
-                    ...state,
+        case "SORT_CATEGORY":
+            let r = state.allRecipes.filter(r => r.category_id == action.id)
+            return {
+                ...state,
                 recipes: r
-                }; 
+            }; 
 
+        case "RECIPE_SEARCH":
+            return {
+                ...state,
+                recipes: action.recipes
+            }; 
+           
         case "ADD_TO_FAVORITES":
             return {
                 ...state,
