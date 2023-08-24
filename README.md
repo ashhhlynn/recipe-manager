@@ -29,8 +29,8 @@ A content management application for recipes with five ingredients or less. Crea
 - Redux
 - Semantic UI React
 - HTML & CSS
-- PostgresQL - Database
-- Bcrypt for authentication and authorization
+- PostgreSQL - Database
+- BCrypt for authentication and authorization
 - active_model_serializers - allows customization and rendering of data in JSON format as responses to requests
 - React Router
 
