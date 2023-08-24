@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Item, Image, Grid, Rating, Button, Divider } from 'semantic-ui-react'
+import { Item, Image, Grid, Rating, Button, Icon, Divider } from 'semantic-ui-react'
 import RecipeReviews from './RecipeReviews'
 import CreateReview from './CreateReview'
 import { connect } from "react-redux"
@@ -24,24 +24,25 @@ class RecipeInfo extends Component {
                         <Image size="medium" src={this.props.recipe.image_url}/>
                     </Grid.Column>
                     <Grid.Column>
-                        <Item style={{marginRight:"17%"}}>
-                            <h1 style={{fontWeight:"normal", marginTop:"3%"}}>{this.props.recipe.name}
+                        <Item style={{marginRight:"10%", textAlign:"center"}}>
                             {this.props.favorites.find(r => r.recipe_id == this.props.recipe.id) ?
                                 <>
-                                <Button onClick={this.props.removeFavorite} circular floated="right">Remove</Button>
+                                <Button onClick={this.props.removeFavorite} circular floated="right">
+                                    <center><Icon name="minus"/></center>
+                                </Button>
                                 </>
                             :
                                 <>
-                                <Button onClick={this.props.addToFavorites} circular floated="right" >Save</Button>
+                                <Button onClick={this.props.addToFavorites} circular floated="right">
+                                    <center><Icon name="heart"/></center>
+                                </Button>
                                 </>
                             }
-                            </h1>
+                            <h1 style={{fontWeight:"normal", marginTop:"3%"}}>{this.props.recipe.name}</h1>
                             <Rating style={{marginTop:"-6%"}} size="huge" key={this.props.recipe.id} rating={this.props.recipe.average} disabled maxRating={5} />
                             <Divider></Divider>
                             <br></br>
-                            <CreateReview recipe={this.props.recipe} 
-                            updateModalClick={this.updateModal}
-                            />
+                            <CreateReview recipe={this.props.recipe} updateModalClick={this.updateModal}/>
                         </Item>
                     </Grid.Column>
                 </Grid>
@@ -57,7 +58,6 @@ class RecipeInfo extends Component {
                     <h3 style={{marginTop:"-.25%"}}><b>reviews</b></h3>
                     {this.props.recipe.reviews.length !== 0 ?
                         <>
-                        <Divider></Divider>
                         <RecipeReviews reviews={this.props.recipe.reviews} />
                         </>
                     :

@@ -18,12 +18,12 @@ const rootReducer = (state = initialState, action) => {
                 allRecipes: action.recipes
             };
 
-            case "FETCH_CATEGORIES":
-                return {
-                    ...state,
-                    categories: action.categories,
-                    loading: false,
-                };
+        case "FETCH_CATEGORIES":
+            return {
+                ...state,
+                categories: action.categories,
+                loading: false,
+            };
 
         case 'FETCH_FAVORITES':
             console.log(action.favorites)

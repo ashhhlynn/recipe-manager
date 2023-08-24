@@ -4,5 +4,6 @@ class CategoriesController < ApplicationController
     def index
         @categories = Category.all.order(title: :asc)
         render json: @categories
-      end
+    end
+
 end

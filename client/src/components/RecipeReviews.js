@@ -17,7 +17,7 @@ class RecipeReviews extends Component {
         })
         return (
             <>
-                {reviews}
+            {reviews}
             </>
         )
     }

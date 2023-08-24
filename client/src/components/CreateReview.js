@@ -83,13 +83,13 @@ class CreateReview extends Component {
 
 const mapStateToProps = (state) => {
     return { 
-       currentUser: state.currentUser,
+       currentUser: state.currentUser
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return { 
-        updateRR: (recipe) =>  { dispatch(updateRR(recipe)) }, 
+        updateRR: (recipe) =>  { dispatch(updateRR(recipe)) } 
     }
 }
 

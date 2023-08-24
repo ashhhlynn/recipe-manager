@@ -43,8 +43,8 @@ class Recipe extends Component {
                         window.alert("Failed to add to favorites.")
                     }
                     else {
-                    window.alert("Added to favorites.")
-                    this.props.addToFavorites(data)
+                        window.alert("Added to favorites.")
+                        this.props.addToFavorites(data)
                     }
                 })
             }
@@ -73,7 +73,7 @@ class Recipe extends Component {
             <>
             <Card>
                 <Image style={{cursor:"pointer", width:"270px", height:"260px"}} src= {i.image_url} onClick={this.handleOpen}/>
-                <h3 style={{fontSize:"19px", marginTop: "2%", marginBottom:"2%"}}>
+                <h3 style={{fontSize:"18px", marginTop: "2%", marginBottom:"2%"}}>
                     {i.name}                   
                 </h3>
                   

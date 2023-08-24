@@ -17,18 +17,12 @@ import Navbar from './components/Navbar'
 
 class App extends Component {
 
-  state = {
-    categories: []
-  }
-
   componentDidMount = () => {
     fetch("/categories")
     .then(resp => resp.json())
     .then(data => {
       this.props.fetchCategories(data)
-      this.setState({categories: data})
-    })
-    
+    })    
     fetch("/profile")
     .then(resp => resp.json())
     .then(data => {

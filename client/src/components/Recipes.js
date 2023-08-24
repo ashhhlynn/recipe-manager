@@ -51,25 +51,23 @@ class Recipes extends Component {
         })
         return (
             <>
-                        <Item style={{marginTop:"2.5%", backgroundColor:"#f0e9ef", width:"850px", marginLeft:"9%"}}> 
-                            <br></br>
-                            <h2 style={{marginTop:"-1%"}}>Sort Recipes</h2>
-                            <Button id="3" circular onClick={(event)=>{this.sortItems(event)}}>name</Button> 
-                            <Button id="2" circular onClick={(event)=>{this.sortItems(event)}}>date</Button> 
-                            <Button id="1" circular onClick={(event)=>{this.sortItems(event)}}>rating</Button> 
-                            <Button id="4" circular onClick={(event)=>{this.sortItems(event)}}>reviews</Button> 
-                            <RecipeSearch searchRecipes={this.searchRecipes} recipes={this.props.allRecipes}/>
-                            <br></br>
-                        </Item>
-                        <br></br>
-                        <Card.Group itemsPerRow={3} style={{width:"890px", marginTop: "1%", marginLeft:"6.2%"}}>
-                            {recipeGroup}
-                        </Card.Group>
-                        </>
-                
+            <Item style={{marginTop:"2.5%", backgroundColor:"#f0e9ef", width:"850px", marginLeft:"9%"}}> 
+                <br></br>
+                <h2 style={{marginTop:"-1%"}}>sort recipes</h2>
+                <Button id="3" circular onClick={(event)=>{this.sortItems(event)}}>name</Button> 
+                <Button id="2" circular onClick={(event)=>{this.sortItems(event)}}>date</Button> 
+                <Button id="1" circular onClick={(event)=>{this.sortItems(event)}}>rating</Button> 
+                <Button id="4" circular onClick={(event)=>{this.sortItems(event)}}>reviews</Button> 
+                <RecipeSearch searchRecipes={this.searchRecipes} recipes={this.props.allRecipes}/>
+                <br></br>
+            </Item>
+            <br></br>
+            <Card.Group itemsPerRow={3} style={{width:"890px", marginTop: "1%", marginLeft:"6.2%"}}>
+                {recipeGroup}
+            </Card.Group>
+            </>                
         )     
     }
-
 }
 
 const mapStateToProps = (state) => {
@@ -87,7 +85,6 @@ const mapDispatchToProps = (dispatch) => {
         sortDate: () =>  { dispatch(sortDate()) },
         sortRating: () =>  { dispatch(sortRating()) },
         recipeSearch: (recipes) =>  { dispatch(recipeSearch(recipes)) },
-
     }
 }
 

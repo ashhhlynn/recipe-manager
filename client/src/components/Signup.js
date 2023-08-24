@@ -45,52 +45,47 @@ class Signup extends Component {
     render() {
         return (
             <>
-                <Segment style={{marginLeft:"28%", marginTop:"5%", width:"615px"}}>
-                            <h1>Register</h1>
-                            <p>Already have an account? <Button circular basic size="small" as={Link} to='/login'>Log In</Button></p>
-                            <Form onSubmit={ (event) => {this.handleSubmit(event, this.state)} }>              
-                                <Form.Input
-                                required
-                                type="text"
-                                id="username"
-                                placeholder="Username"
-                                value={this.state.username} 
-                                onChange={this.handleChange}            
-                                />
-                                <Form.Input
-                                required
-                                type="text"
-                                id="email"
-                                placeholder="Email"
-                                value={this.state.email} 
-                                onChange={this.handleChange}
-                                />
-                                <Form.Input
-                                required
-                                id="password"
-                                placeholder="Password"
-                                type="password"
-                                value={this.state.password} 
-                                onChange={this.handleChange}
-                                /> 
-                                <Form.Input
-                                required
-                                id="password_confirmation"
-                                placeholder="Confirm Password"
-                                type="password"
-                                value={this.state.password_confirmation} 
-                                onChange={this.handleChange}
-                                />
-                                <Form.Button circular content="Submit"/>
-                            </Form>
-                </Segment>    
+            <Segment style={{marginLeft:"28%", marginTop:"5%", width:"615px"}}>
+                <h1>register</h1>
+                <p>Already have an account? <Button circular basic size="small" as={Link} to='/login'>Log In</Button></p>
+                <Form onSubmit={ (event) => {this.handleSubmit(event, this.state)} }>              
+                    <Form.Input
+                        required
+                        type="text"
+                        id="username"
+                        placeholder="Username"
+                        value={this.state.username} 
+                        onChange={this.handleChange}            
+                    />
+                    <Form.Input
+                        required
+                        type="text"
+                        id="email"
+                        placeholder="Email"
+                        value={this.state.email} 
+                        onChange={this.handleChange}
+                    />
+                    <Form.Input
+                        required
+                        id="password"
+                        placeholder="Password"
+                        type="password"
+                        value={this.state.password} 
+                        onChange={this.handleChange}
+                    /> 
+                    <Form.Input
+                        required
+                        id="password_confirmation"
+                        placeholder="Confirm Password"
+                        type="password"
+                        value={this.state.password_confirmation} 
+                        onChange={this.handleChange}
+                    />
+                    <Form.Button circular content="Submit"/>
+                </Form>
+            </Segment>    
             </>
         )
-    }
-}
-
-const mapStateToProps = (state) => {
-    return { 
     }
 }
 
@@ -100,4 +95,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }  
 
-export default connect(mapStateToProps, mapDispatchToProps)(Signup)
+export default connect(null, mapDispatchToProps)(Signup)
