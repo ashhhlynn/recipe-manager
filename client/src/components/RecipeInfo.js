@@ -58,7 +58,7 @@ class RecipeInfo extends Component {
                     <h3 style={{marginTop:"-.25%"}}><b>reviews</b></h3>
                     {this.props.recipe.reviews.length !== 0 ?
                         <>
-                        <RecipeReviews reviews={this.props.recipe.reviews} />
+                        <RecipeReviews reviews={this.props.recipe.reviews}/>
                         </>
                     :
                         <h4 style={{marginTop:"-.25%"}}>This recipe has not been reviewed yet.</h4>

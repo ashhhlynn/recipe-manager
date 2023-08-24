@@ -10,7 +10,6 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
         case "FETCH_RECIPES":
-            console.log(action.recipes)
             return {
                 ...state,
                 recipes: action.recipes,
@@ -26,7 +25,6 @@ const rootReducer = (state = initialState, action) => {
             };
 
         case 'FETCH_FAVORITES':
-            console.log(action.favorites)
             return {
                 ...state, 
                 favorites: action.favorites,
@@ -34,7 +32,6 @@ const rootReducer = (state = initialState, action) => {
             };
 
         case "UPDATE_RR":
-            console.log(action.recipe)
             console.log(state.favorites.find(item => parseInt(item.recipe_id) === action.recipe.id))
             return {
                 ...state,
@@ -45,7 +42,7 @@ const rootReducer = (state = initialState, action) => {
         case "SORT_A_TO_Z":
             return {
                 ...state,
-                 recipes: [...state.recipes.slice().sort((item1, item2) => item2.name < item1.name ? 1 : -1)]
+                recipes: [...state.recipes.slice().sort((item1, item2) => item2.name < item1.name ? 1 : -1)]
             }; 
 
         case "SORT_NUMBER_REVIEWS":

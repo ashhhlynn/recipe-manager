@@ -32,4 +32,4 @@ class FavoritesController < ApplicationController
       params.require(:favorite).permit(:user_id, :recipe_id, :id)
     end
 
-  end
+end

@@ -27,7 +27,7 @@ class Navbar extends Component {
                     {this.props.currentUser.length === 0 ?
                         <>
                         <Menu.Item><Button as={Link} to='/signup' circular>Sign Up</Button></Menu.Item>
-                        <Menu.Item ><Link to="/" style={{ color:"#000000", fontSize:"18px"}}>all recipes</Link><br></br>
+                        <Menu.Item><Link to="/" style={{ color:"#000000", fontSize:"18px"}}>all recipes</Link><br></br>
                             <p style={{marginTop:"2%", fontSize:"14px"}}>
                                 <b>categories</b><br></br>
                                 {categories}
@@ -40,7 +40,7 @@ class Navbar extends Component {
                     :
                         <>
                         <h1 style={{marginTop:"4%", fontSize:"24px"}}>Hi, {this.props.currentUser.username}!</h1>                
-                        <Menu.Item ><Link to="/" style={{ color:"#000000", fontSize:"18px"}}>all recipes</Link><br></br>
+                        <Menu.Item><Link to="/" style={{ color:"#000000", fontSize:"18px"}}>all recipes</Link><br></br>
                             <p style={{marginTop:"2%", fontSize:"14px"}}>
                                 <b>categories</b><br></br>
                                 {categories}
@@ -49,7 +49,7 @@ class Navbar extends Component {
                         <Menu.Item><Link to="/createrecipe" style={{ color:"#000000", fontSize:"18px"}}>share recipe</Link></Menu.Item>
                         <Menu.Item><Link to="/favorites" style={{color:"#000000",  fontSize:"18px"}}>favorites</Link></Menu.Item>
                         <Menu.Item></Menu.Item>
-                    </>
+                        </>
                     }
                 </Menu>
             </div>

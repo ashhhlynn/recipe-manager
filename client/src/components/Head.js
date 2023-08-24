@@ -19,7 +19,7 @@ class Head extends Component {
     render() {
         return (
             <div>
-                <Segment style={{backgroundColor: "#702963", color:"white", marginBottom:"0%", letterSpacing:"1px"}}>Share, Save, and Score Recipes with Five Ingredients or Less </Segment>
+                <Segment style={{backgroundColor: "#702963", color:"white", marginBottom:"0%", letterSpacing:"1px"}}>Share, Save, and Score Recipes with Five Ingredients or Less</Segment>
                 <Menu borderless icon="labeled" style={{marginTop:"-.6%"}} >
                     <h1 style={{ fontFamily: "Segoe Print", color: "#702963", fontSize:"38px", marginTop:"1.6%", marginLeft:"3%"}}>
                         Dash Dish
@@ -37,7 +37,6 @@ class Head extends Component {
                     </Menu.Menu>
                 </Menu>
                 <div className="picture">
-                  
                 </div>
             </div>
         )

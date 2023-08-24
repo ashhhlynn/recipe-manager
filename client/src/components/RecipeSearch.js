@@ -32,7 +32,7 @@ function RecipeSearch(props) {
                     onChange={searchR}
                     value={value}
                     />
-                    <Button style={{backgroundColor:"white"}} onClick ={ (event) => {handleSubmit(event, value)}}>
+                    <Button style={{backgroundColor:"white"}} onClick={ (event) => {handleSubmit(event, value)}}>
                         <center><Icon color="black" name="search"></Icon></center>
                     </Button>
                 </Form.Group>

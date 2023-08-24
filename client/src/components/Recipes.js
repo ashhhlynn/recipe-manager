@@ -84,7 +84,7 @@ const mapDispatchToProps = (dispatch) => {
         sortNumberReviews: () =>  { dispatch(sortNumberReviews()) },
         sortDate: () =>  { dispatch(sortDate()) },
         sortRating: () =>  { dispatch(sortRating()) },
-        recipeSearch: (recipes) =>  { dispatch(recipeSearch(recipes)) },
+        recipeSearch: (recipes) =>  { dispatch(recipeSearch(recipes)) }
     }
 }
 

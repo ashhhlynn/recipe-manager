@@ -25,29 +25,26 @@ class Recipe extends Component {
     }
 
     addToFavorites = () => {
-        let id = this.props.recipe.id
-        if (!this.props.favorites.find(f=> f.recipe_id === id)) {
-            if (this.props.currentUser.length !== 0) {
-                fetch("/favorites", {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        recipe_id: id, user_id: this.props.currentUser.id 
-                    })
+        if (this.props.currentUser.length !== 0) {
+            fetch("/favorites", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    recipe_id: this.props.recipe.id, user_id: this.props.currentUser.id 
                 })
-                .then((response) => response.json())
-                .then(data => {
-                    if (data.errors) {
-                        window.alert("Failed to add to favorites.")
-                    }
-                    else {
-                        window.alert("Added to favorites.")
-                        this.props.addToFavorites(data)
-                    }
-                })
-            }
+            })
+            .then((response) => response.json())
+            .then(data => {
+                if (data.errors) {
+                    window.alert("Failed to add to favorites.")
+                }
+                else {
+                    window.alert("Added to favorites.")
+                    this.props.addToFavorites(data)
+                }
+            })
         }
     }
 
@@ -76,7 +73,6 @@ class Recipe extends Component {
                 <h3 style={{fontSize:"18px", marginTop: "2%", marginBottom:"2%"}}>
                     {i.name}                   
                 </h3>
-                  
                 <Item>
                     <Rating size="small" rating={i.average} disabled maxRating={5} />
                 </Item>
@@ -85,7 +81,7 @@ class Recipe extends Component {
                     onClose={this.handleClose}
                     closeIcon
                 >
-                    <Modal.Content >
+                    <Modal.Content>
                         <RecipeInfo addToFavorites={this.addToFavorites} removeFavorite={this.removeFavorite} recipe={i} key={i.id} handleUpdate={this.handleUpdate} />
                     </Modal.Content>
                 </Modal>

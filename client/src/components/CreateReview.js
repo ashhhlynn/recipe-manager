@@ -10,7 +10,7 @@ class CreateReview extends Component {
     calculateAverage = (number) => {
         let reviews = this.props.recipe.reviews.map(r => r.score)
         reviews.push(number)
-        const avg = Math.round(reviews.reduce((a,b) => a + b, 0) / reviews.length);
+        const avg = Math.round(reviews.reduce((a,b) => a + b, 0) / reviews.length)
         fetch("/recipes/" + this.props.recipe.id, {
             method: 'PUT',
             headers: {

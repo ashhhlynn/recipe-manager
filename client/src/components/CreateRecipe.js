@@ -124,7 +124,7 @@ class CreateRecipe extends Component {
                             value={this.state.ingredient1} 
                             onChange={this.handleChange}
                         />                    
-                        <Button id="ingredient1" basic color="grey" onClick={this.addIngredient} >+</Button>
+                        <Button id="ingredient1" basic color="grey" onClick={this.addIngredient}>+</Button>
                     </Form.Group>
                     <Form.Group>
                         <Form.Input
@@ -134,7 +134,7 @@ class CreateRecipe extends Component {
                             value={this.state.ingredient2} 
                             onChange={this.handleChange}
                         />
-                        <Button id="ingredient2" basic color="grey" onClick={this.addIngredient} >+</Button>
+                        <Button id="ingredient2" basic color="grey" onClick={this.addIngredient}>+</Button>
                     </Form.Group>
                     <Form.Group>
                         <Form.Input                       
@@ -144,7 +144,7 @@ class CreateRecipe extends Component {
                             value={this.state.ingredient3} 
                             onChange={this.handleChange}
                         />
-                        <Button id="ingredient3" basic  color="grey" onClick={this.addIngredient} >+</Button>
+                        <Button id="ingredient3" basic  color="grey" onClick={this.addIngredient}>+</Button>
                     </Form.Group>
                     <Form.Group>
                         <Form.Input
@@ -152,9 +152,9 @@ class CreateRecipe extends Component {
                             id="ingredient4"
                             placeholder="Ingredient"
                             value={this.state.ingredient4} 
-                             onChange={this.handleChange}
+                            onChange={this.handleChange}
                         />
-                        <Button id="ingredient4" basic color="grey" onClick={this.addIngredient} >+</Button>
+                        <Button id="ingredient4" basic color="grey" onClick={this.addIngredient}>+</Button>
                     </Form.Group>
                     <Form.Group>
                         <Form.Input
@@ -164,7 +164,7 @@ class CreateRecipe extends Component {
                             value={this.state.ingredient5} 
                             onChange={this.handleChange}
                         />
-                        <Button id="ingredient5" basic color="grey" onClick={this.addIngredient} >+</Button>
+                        <Button id="ingredient5" basic color="grey" onClick={this.addIngredient}>+</Button>
                     </Form.Group>
                 </Item> 
                 <Form.Button circular style={{marginTop:"5%"}} content='Save Recipe'/>        
