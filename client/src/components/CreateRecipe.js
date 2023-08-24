@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Button, Dropdown, Segment, Item } from 'semantic-ui-react'
+import { Form, Button, Dropdown, Item } from 'semantic-ui-react'
 
 class CreateRecipe extends Component {
 
@@ -65,6 +65,7 @@ class CreateRecipe extends Component {
                 }
             else {
                 window.alert("Recipe created.")
+                this.props.handleRoute()
             }
         })
     }          
@@ -79,99 +80,96 @@ class CreateRecipe extends Component {
         })
         return ( 
             <>
-            <Segment style={{marginLeft:"29.5%", marginTop:"2%", width:"615px"}}>
-                <h1 style={{ marginTop:"1.5%"}}>share recipe</h1>
-                    <Form success onSubmit= { (event) => {this.handleSubmit(event, this.state)}}>
+            <Form success onSubmit= { (event) => {this.handleSubmit(event, this.state)}}>
+                <Form.Input
+                    required
+                    type="text"
+                    id="name"
+                    placeholder="Name"
+                    value={this.state.name} 
+                    onChange={this.handleChange}
+                />
+                <Form.Input
+                    required
+                    type="text"
+                    id="image_url"
+                    placeholder="Image URL"
+                    value={this.state.image_url} 
+                    onChange={this.handleChange}
+                />
+                <Form.TextArea
+                    required
+                    type="text"
+                    id="description"
+                    placeholder="Instructions"
+                    value={this.state.description} 
+                    onChange={this.handleChange}
+                />    
+                <Dropdown
+                    fluid
+                    placeholder={this.state.category_name}
+                    selection
+                    options={categories}
+                />
+                <h2>ingredients</h2>
+                <p>Click plus button to add ingredient.</p>
+                <br></br>
+                <Item style={{marginLeft: "30%"}}>
+                    <Form.Group>
                         <Form.Input
                             required
                             type="text"
-                            id="name"
-                            placeholder="Name"
-                            value={this.state.name} 
+                            id="ingredient1"
+                            placeholder="Ingredient"
+                            value={this.state.ingredient1} 
                             onChange={this.handleChange}
-                        />
+                        />                    
+                        <Button id="ingredient1" basic color="grey" onClick={this.addIngredient} >+</Button>
+                    </Form.Group>
+                    <Form.Group>
                         <Form.Input
-                            required
                             type="text"
-                            id="image_url"
-                            placeholder="Image URL"
-                            value={this.state.image_url} 
+                            id="ingredient2"
+                            placeholder="Ingredient"
+                            value={this.state.ingredient2} 
                             onChange={this.handleChange}
                         />
-                        <Form.TextArea
-                            required
+                        <Button id="ingredient2" basic color="grey" onClick={this.addIngredient} >+</Button>
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Input                       
                             type="text"
-                            id="description"
-                            placeholder="Instructions"
-                            value={this.state.description} 
+                            id="ingredient3"
+                            placeholder="Ingredient"
+                            value={this.state.ingredient3} 
                             onChange={this.handleChange}
-                        />    
-                        <Dropdown
-                            fluid
-                            placeholder={this.state.category_name}
-                            selection
-                            options={categories}
                         />
-                        <h2>ingredients</h2>
-                        <p>Click plus button to add ingredient.</p>
-                        <br></br>
-                        <Item style={{marginLeft: "30%"}}>
-                            <Form.Group>
-                                <Form.Input
-                                    required
-                                    type="text"
-                                    id="ingredient1"
-                                    placeholder="Ingredient"
-                                    value={this.state.ingredient1} 
-                                    onChange={this.handleChange}
-                                />                    
-                                <Button id="ingredient1" basic color="grey" onClick={this.addIngredient} >+</Button>
-                            </Form.Group>
-                            <Form.Group>
-                                <Form.Input
-                                    type="text"
-                                    id="ingredient2"
-                                    placeholder="Ingredient"
-                                    value={this.state.ingredient2} 
-                                    onChange={this.handleChange}
-                                />
-                                <Button id="ingredient2" basic color="grey" onClick={this.addIngredient} >+</Button>
-                            </Form.Group>
-                            <Form.Group>
-                                <Form.Input                       
-                                    type="text"
-                                    id="ingredient3"
-                                    placeholder="Ingredient"
-                                    value={this.state.ingredient3} 
-                                    onChange={this.handleChange}
-                                />
-                                <Button id="ingredient3" basic  color="grey" onClick={this.addIngredient} >+</Button>
-                            </Form.Group>
-                            <Form.Group>
-                                <Form.Input
-                                    type="text"
-                                    id="ingredient4"
-                                    placeholder="Ingredient"
-                                    value={this.state.ingredient4} 
-                                    onChange={this.handleChange}
-                                />
-                                <Button id="ingredient4" basic color="grey" onClick={this.addIngredient} >+</Button>
-                            </Form.Group>
-                            <Form.Group>
-                                <Form.Input
-                                    type="text"
-                                    id="ingredient5"
-                                    placeholder="Ingredient"
-                                    value={this.state.ingredient5} 
-                                    onChange={this.handleChange}
-                                />
-                                <Button id="ingredient5" basic color="grey" onClick={this.addIngredient} >+</Button>
-                            </Form.Group>
-                        </Item> 
-                    <Form.Button circular style={{marginTop:"5%"}} content='Save Recipe'/>        
-                    <br></br>
-                </Form>                     
-            </Segment>                   
+                        <Button id="ingredient3" basic  color="grey" onClick={this.addIngredient} >+</Button>
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Input
+                            type="text"
+                            id="ingredient4"
+                            placeholder="Ingredient"
+                            value={this.state.ingredient4} 
+                             onChange={this.handleChange}
+                        />
+                        <Button id="ingredient4" basic color="grey" onClick={this.addIngredient} >+</Button>
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Input
+                            type="text"
+                            id="ingredient5"
+                            placeholder="Ingredient"
+                            value={this.state.ingredient5} 
+                            onChange={this.handleChange}
+                        />
+                        <Button id="ingredient5" basic color="grey" onClick={this.addIngredient} >+</Button>
+                    </Form.Group>
+                </Item> 
+                <Form.Button circular style={{marginTop:"5%"}} content='Save Recipe'/>        
+                <br></br>
+            </Form>                     
             </>
         )
     }

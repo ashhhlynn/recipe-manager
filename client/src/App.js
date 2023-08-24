@@ -2,7 +2,7 @@ import './App.css'
 import 'semantic-ui-css/semantic.min.css'
 import React, { Component } from 'react'
 import Recipes from './components/Recipes'
-import CreateRecipe from './components/CreateRecipe'
+import CreateRecipeContainer from './components/CreateRecipeContainer'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Container, Segment, Grid } from 'semantic-ui-react'
 import Login from './components/Login'
@@ -54,7 +54,7 @@ class App extends Component {
                       <Recipes/>
                     </Route>
                     <Route exact path="/createrecipe">
-                      <CreateRecipe categories={this.props.categories}/>
+                      <CreateRecipeContainer categories={this.props.categories}/>
                     </Route>
                     <Route exact path="/favorites">
                       <Favorites/>
@@ -79,7 +79,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return { 
-      categories: state.categories
+    categories: state.categories
   }
 }
 
