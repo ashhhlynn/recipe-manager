@@ -20,8 +20,8 @@ class Recipes extends Component {
         })
     }
 
-    getMessage = () => {
-        console.log('Recipe rating and reviews updated.')
+    getRecipes = () => {
+        console.log("Recipe updated.")
     }
 
     sortItems = (event) => {
@@ -46,7 +46,7 @@ class Recipes extends Component {
     render() {
         const recipeGroup = this.props.recipes.map( r => {
             return (
-                <Recipe recipe={r} key={r.name} getUpdate={this.getMessage}/>
+                <Recipe recipe={r} key={r.name} getUpdate={this.getRecipes}/>
             )
         })
         return (

@@ -33,6 +33,7 @@ const rootReducer = (state = initialState, action) => {
 
         case "UPDATE_RR":
             console.log(state.favorites.find(item => parseInt(item.recipe_id) === action.recipe.id))
+
             return {
                 ...state,
                 recipes: [...state.recipes.filter(item=> item.id !== action.recipe.id), action.recipe],

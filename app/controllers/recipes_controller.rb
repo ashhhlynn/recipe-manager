@@ -46,4 +46,4 @@ class RecipesController < ApplicationController
       params.require(:recipe).permit(:average, :name, :user_id, :image_url, :description, :category_id, :recipe_ingredients => [:recipe_id, :name, :id])
     end
 
-  end
+end
