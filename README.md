@@ -6,19 +6,12 @@ A content management application for recipes with five ingredients or less. Crea
   
 ## Functionality
 
-- Users can create accounts and sign in, authenticated and authorized through BCrypt.
-
-- Users can view recipes and sort by alphabetical order, date, number of reviews, and highest rating.
-
-- Users can search recipes by title and filter by category.
-
-- Users can view recipe reviews.
-
-- Users can create recipes to share. 
-
-- Users can write recipe reviews and rate recipes. 
-
-- Users can store and remove recipes under a personal favorites list. 
+- Signup and login
+- Search recipes by title and filter by category 
+- Sort recipes by alphabetical order, date, number of reviews, and highest rating
+- Share recipes 
+- Rate & review recipes, view reviews by other users
+- Store and remove recipes under a personal favorites list
 
 ## Tech Stack
 
@@ -27,12 +20,11 @@ A content management application for recipes with five ingredients or less. Crea
 - JavaScript
 - React
 - Redux
+- React Router
 - Semantic UI React
 - HTML & CSS
-- PostgreSQL - Database
-- BCrypt for authentication and authorization
-- active_model_serializers - allows customization and rendering of data in JSON format as responses to requests
-- React Router
+- PostgreSQL 
+- BCrypt 
 
 ## Instructions
 
