@@ -40,7 +40,6 @@ class RecipeInfo extends Component {
                     </Grid.Column>
                     <Grid.Column>
                         <Item style={{marginRight:"10%", textAlign:"center"}}>
-                            <Button onClick={this.removeRecipe}>Delete R</Button>
                             {this.props.favorites.find(r => r.recipe_id == this.props.recipe.id) ?
                                 <>
                                 <Button onClick={this.props.removeFavorite} circular floated="right">
