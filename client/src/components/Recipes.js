@@ -17,6 +17,7 @@ class Recipes extends Component {
         .then(resp => resp.json())
         .then(data => {
             this.props.fetchRecipes(data)
+            console.log(data)
         })
     }
 

@@ -9,6 +9,21 @@ class RecipeInfo extends Component {
     updateModal = () => {
         this.props.handleUpdate()
     }
+
+    removeRecipe = () => {
+
+            let id = this.props.recipe.id
+            fetch("/recipes/" + id, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            })
+            .then(() => {
+                window.alert("Removed from favorites.")
+            })
+        
+    }
     
     render() {
         const recipe_ingredients = this.props.recipe.recipe_ingredients.map(ri => {
@@ -25,6 +40,7 @@ class RecipeInfo extends Component {
                     </Grid.Column>
                     <Grid.Column>
                         <Item style={{marginRight:"10%", textAlign:"center"}}>
+                            <Button onClick={this.removeRecipe}>Delete R</Button>
                             {this.props.favorites.find(r => r.recipe_id == this.props.recipe.id) ?
                                 <>
                                 <Button onClick={this.props.removeFavorite} circular floated="right">
