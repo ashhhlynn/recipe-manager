@@ -9,21 +9,6 @@ class RecipeInfo extends Component {
     updateModal = () => {
         this.props.handleUpdate()
     }
-
-    removeRecipe = () => {
-
-            let id = this.props.recipe.id
-            fetch("/recipes/" + id, {
-                method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            })
-            .then(() => {
-                window.alert("Removed from favorites.")
-            })
-        
-    }
     
     render() {
         const recipe_ingredients = this.props.recipe.recipe_ingredients.map(ri => {
