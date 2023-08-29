@@ -14,11 +14,11 @@
 - BCrypt
 
 ## Features
-- Signup and login
+- Register and log in
 - Search recipes by title and filter by category 
 - Sort recipes by alphabetical order, date, number of reviews, and highest rating
 - Share recipes 
-- Rate & review recipes, view reviews by other users
+- Rate and review recipes, and view reviews by other users
 - Store and remove recipes under a personal favorites list
 
 ## Setup
