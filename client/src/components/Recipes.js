@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Button, Card,  Item  } from 'semantic-ui-react'
 import { connect } from "react-redux"
 import Recipe from './Recipe'
-import { fetchRecipes } from "./actions/rootActions"
 import { sortAToZ } from "./actions/rootActions"
 import { sortNumberReviews } from "./actions/rootActions"
 import { sortDate } from "./actions/rootActions"
@@ -11,14 +10,6 @@ import { recipeSearch } from "./actions/rootActions"
 import RecipeSearch from './RecipeSearch'
 
 class Recipes extends Component {        
-
-    componentDidMount = () => {
-        fetch("/recipes")
-        .then(resp => resp.json())
-        .then(data => {
-            this.props.fetchRecipes(data)
-        })
-    }
 
     getRecipes = () => {
         console.log("Recipe updated.")
@@ -79,7 +70,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return { 
-        fetchRecipes: (recipes) =>  { dispatch(fetchRecipes(recipes)) }, 
         sortAToZ: () =>  { dispatch(sortAToZ()) },
         sortNumberReviews: () =>  { dispatch(sortNumberReviews()) },
         sortDate: () =>  { dispatch(sortDate()) },

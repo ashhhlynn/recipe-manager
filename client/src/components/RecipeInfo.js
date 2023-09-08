@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Item, Image, Grid, Rating, Button, Divider, Icon } from 'semantic-ui-react'
+import { Item, Image, Grid, Rating, Button, Divider } from 'semantic-ui-react'
 import RecipeReviews from './RecipeReviews'
 import CreateReview from './CreateReview'
 import { connect } from "react-redux"
@@ -20,7 +20,7 @@ class RecipeInfo extends Component {
             <center>
                 <Grid stackable columns={2}>
                     <Grid.Column > 
-                        <br></br><br></br><br></br>
+                        <br></br><br></br>
                         <Image size="medium" src={this.props.recipe.image_url}/>
                     </Grid.Column>
                     <Grid.Column>
@@ -39,7 +39,7 @@ class RecipeInfo extends Component {
                                 </>
                             }
                             <br></br><br></br>
-                            <h1 style={{marginTop:"3%"}}>{this.props.recipe.name}</h1>
+                            <h1 style={{marginTop:"-2%"}}>{this.props.recipe.name}</h1>
                             <Rating style={{marginTop:"-6%"}} size="huge" key={this.props.recipe.id} rating={this.props.recipe.average} disabled maxRating={5} />
                             <Divider></Divider>
                             <br></br>

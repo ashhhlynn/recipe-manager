@@ -14,10 +14,12 @@ import { fetchFavorites } from "./components/actions/rootActions"
 import { checkUser } from "./components/actions/rootActions"
 import { fetchCategories } from "./components/actions/rootActions"
 import Navbar from './components/Navbar'
+import { fetchRecipes } from "./components/actions/rootActions"
 
 class App extends Component {
 
   componentDidMount = () => {
+    this.fetchAllRecipes()
     fetch("/categories")
     .then(resp => resp.json())
     .then(data => {
@@ -37,6 +39,14 @@ class App extends Component {
     })
   }
   
+  fetchAllRecipes = () => {
+    fetch("/recipes")
+    .then(resp => resp.json())
+    .then(data => {
+        this.props.fetchRecipes(data)
+    })
+  }
+
   render() {
     return (
       <Router>
@@ -60,10 +70,10 @@ class App extends Component {
                       <Favorites/>
                     </Route>
                     <Route exact path="/login">
-                      <Login/>
+                      <Login fetchAllRecipes={this.fetchAllRecipes}/>
                     </Route>
                     <Route exact path="/signup">
-                      <Signup/>
+                      <Signup fetchAllRecipes={this.fetchAllRecipes}/>
                     </Route>
                   </Switch>
                 </Grid.Column>
@@ -88,6 +98,7 @@ const mapDispatchToProps = (dispatch) => {
     checkUser: (user) =>  { dispatch(checkUser(user)) },
     fetchFavorites: (favorites) =>  { dispatch(fetchFavorites(favorites)) }, 
     fetchCategories: (favorites) =>  { dispatch(fetchCategories(favorites)) }, 
+    fetchRecipes: (recipes) =>  { dispatch(fetchRecipes(recipes)) } 
   }
 }
 

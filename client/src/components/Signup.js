@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom'
 import SignupForm from './SignupForm'
 import { useHistory } from "react-router-dom"
 
-function Signup() {
+function Signup(props) {
 
     const history = useHistory()
 
     function handleRoute() {
+        props.fetchAllRecipes()
         history.push('/')
     }
 

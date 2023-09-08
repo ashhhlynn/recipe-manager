@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom'
 import LoginForm from './LoginForm'
 import { useHistory } from "react-router-dom"
 
-function Login() {
+function Login(props) {
 
     const history = useHistory()
 
     function handleRoute() {
+        props.fetchAllRecipes()
         history.push('/')
     }
 

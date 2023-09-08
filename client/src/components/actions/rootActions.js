@@ -52,6 +52,12 @@ export const sortCategory = (id) => {
     }
 }
 
+export const resetRecipes = () => {
+    return (dispatch) => {
+        dispatch({ type: "RESET_RECIPES" })
+    }
+}
+
 export const recipeSearch = (recipes) => {
     return (dispatch) => {
         dispatch({ type: "RECIPE_SEARCH", recipes: recipes })

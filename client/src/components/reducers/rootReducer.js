@@ -70,6 +70,12 @@ const rootReducer = (state = initialState, action) => {
                 recipes: r
             }; 
 
+        case "RESET_RECIPES":
+            return {
+                ...state,
+                recipes: state.allRecipes
+            }; 
+
         case "RECIPE_SEARCH":
             return {
                 ...state,
@@ -94,7 +100,7 @@ const rootReducer = (state = initialState, action) => {
         case "ADD_RECIPE":
             return {
                 ...state,
-                recipes: [...state.recipes, action.data],
+                recipes: [...state.allRecipes, action.data],
             };
 
         case 'SET_CURRENT_USER':

@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Menu, Button, Label} from 'semantic-ui-react'
+import { Menu, Button, Label } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import { connect } from "react-redux"
 import { sortCategory } from "./actions/rootActions"
+import { resetRecipes } from "./actions/rootActions"
 
 class Navbar extends Component {
 
@@ -14,7 +15,7 @@ class Navbar extends Component {
         let categories = this.props.categories.map(c => {
             return (
                 <>
-                <Label onClick={this.sortCat} id={c.id} style={{background:"none", cursor:"pointer"}}>
+                <Label onClick={this.sortCat} as={Link} to='/' id={c.id} style={{background:"none", cursor:"pointer"}}>
                     {c.title}
                 </Label><br></br>
                 </>
@@ -27,7 +28,7 @@ class Navbar extends Component {
                     {this.props.currentUser.length === 0 ?
                         <>
                         <Menu.Item><Button style={{backgroundColor:"white"}}as={Link} to='/signup' circular>Sign Up</Button></Menu.Item>
-                        <Menu.Item><Link to="/">all recipes</Link><br></br>
+                        <Menu.Item><Link to="/" onClick={this.props.resetRecipes}>all recipes</Link><br></br>
                             <p style={{marginTop:"2%", fontSize:"14px"}}>
                                 <b>categories</b><br></br>
                                 {categories}
@@ -40,7 +41,7 @@ class Navbar extends Component {
                     :
                         <>
                         <h1 style={{marginTop:"4%", fontSize:"24px"}}>Hi, {this.props.currentUser.username}!</h1>                
-                        <Menu.Item><Link to="/">all recipes</Link><br></br>
+                        <Menu.Item><Link to="/" onClick={this.props.resetRecipes}>all recipes</Link><br></br>
                             <p style={{marginTop:"2%", fontSize:"14px"}}>
                                 <b>categories</b><br></br>
                                 {categories}
@@ -66,6 +67,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return { 
       sortCategory: (id) =>  { dispatch(sortCategory(id)) },
+      resetRecipes: () =>  { dispatch( resetRecipes()) }
     }
 }
 
