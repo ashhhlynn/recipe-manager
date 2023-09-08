@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Item, Image, Grid, Rating, Button, Divider } from 'semantic-ui-react'
+import { Item, Image, Grid, Rating, Button, Divider, Icon } from 'semantic-ui-react'
 import RecipeReviews from './RecipeReviews'
 import CreateReview from './CreateReview'
 import { connect } from "react-redux"
@@ -27,14 +27,14 @@ class RecipeInfo extends Component {
                         <Item style={{marginRight:"10%", textAlign:"center"}}>
                             {this.props.favorites.find(r => r.recipe_id == this.props.recipe.id) ?
                                 <>
-                                <Button style={{marginRight:"-7%"}} onClick={this.props.removeFavorite} circular floated="right">
-                                    <center>Remove</center>
+                                <Button size="tiny" style={{marginRight:"-7%"}} onClick={this.props.removeFavorite} circular floated="right">
+                                    <center>Remove &hearts;</center>
                                 </Button>
                                 </>
                             :
                                 <>
-                                <Button style={{marginRight:"-7%"}} onClick={this.props.addToFavorites} circular floated="right">
-                                    <center>Favorite</center>
+                                <Button size="tiny" style={{marginRight:"-7%"}} onClick={this.props.addToFavorites} circular floated="right">
+                                    <center>Favorite &hearts;</center>
                                 </Button>
                                 </>
                             }
