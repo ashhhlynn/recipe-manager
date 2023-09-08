@@ -45,7 +45,7 @@ class SignupForm extends Component {
     render() {
         return (
             <>
-            <Form onSubmit={ (event) => {this.handleSubmit(event, this.state)} }>              
+            <Form onSubmit={(event) => {this.handleSubmit(event, this.state)}}>              
                 <Form.Input
                     required
                     type="text"

@@ -68,10 +68,10 @@ class Recipe extends Component {
         const i = this.props.recipe    
         return (
             <>
-            <Card>
-                <Image style={{cursor:"pointer", width:"270px", height:"260px"}} src= {i.image_url} onClick={this.handleOpen}/>
-                <h3 style={{fontSize:"18px", marginTop: "2%", marginBottom:"2%"}}>
-                    {i.name}                   
+            <Card className="recipe-card">
+                <Image style={{ }} src= {i.image_url} onClick={this.handleOpen}/>
+                <h3 style={{marginTop: "2%", marginBottom:"2%"}}>
+                    {i.name}               
                 </h3>
                 <Item>
                     <Rating size="small" rating={i.average} disabled maxRating={5} />

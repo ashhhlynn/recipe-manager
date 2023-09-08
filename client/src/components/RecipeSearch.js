@@ -33,7 +33,9 @@ function RecipeSearch(props) {
                     value={value}
                     />
                     <Button style={{backgroundColor:"white"}} onClick={ (event) => {handleSubmit(event, value)}}>
-                        <center><Icon color="black" name="search"></Icon></center>
+                        <center>
+                            <Icon color="black" name="search"/>
+                        </center>
                     </Button>
                 </Form.Group>
             </Form>

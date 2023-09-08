@@ -23,31 +23,31 @@ class Navbar extends Component {
 
         return (
             <div className="nav" style={{height:"98%"}}>
-                <Menu size="huge" vertical style={{ letterSpacing:"1px", backgroundColor:"#F0f0f0", height:"100%", minHeight:"500px", marginTop:"6%", marginLeft:"-1%"}}>         
+                <Menu size="huge" vertical style={{ marginTop:"6%", marginLeft:"-1%"}}>         
                     {this.props.currentUser.length === 0 ?
                         <>
-                        <Menu.Item><Button as={Link} to='/signup' circular>Sign Up</Button></Menu.Item>
-                        <Menu.Item><Link to="/" style={{ color:"#000000", fontSize:"18px"}}>all recipes</Link><br></br>
+                        <Menu.Item><Button style={{backgroundColor:"white"}}as={Link} to='/signup' circular>Sign Up</Button></Menu.Item>
+                        <Menu.Item><Link to="/">all recipes</Link><br></br>
                             <p style={{marginTop:"2%", fontSize:"14px"}}>
                                 <b>categories</b><br></br>
                                 {categories}
                             </p>
                         </Menu.Item>
-                        <Menu.Item><Link to="/signup" style={{ color:"#000000", fontSize:"18px"}}>share recipe</Link></Menu.Item>
-                        <Menu.Item><Link to="/signup" style={{color:"#000000",  fontSize:"18px"}}>favorites</Link></Menu.Item>
+                        <Menu.Item><Link to="/signup">share recipe</Link></Menu.Item>
+                        <Menu.Item><Link to="/signup">favorites</Link></Menu.Item>
                         <Menu.Item></Menu.Item>
                         </>
                     :
                         <>
                         <h1 style={{marginTop:"4%", fontSize:"24px"}}>Hi, {this.props.currentUser.username}!</h1>                
-                        <Menu.Item><Link to="/" style={{ color:"#000000", fontSize:"18px"}}>all recipes</Link><br></br>
+                        <Menu.Item><Link to="/">all recipes</Link><br></br>
                             <p style={{marginTop:"2%", fontSize:"14px"}}>
                                 <b>categories</b><br></br>
                                 {categories}
                             </p>
                         </Menu.Item>
-                        <Menu.Item><Link to="/createrecipe" style={{ color:"#000000", fontSize:"18px"}}>share recipe</Link></Menu.Item>
-                        <Menu.Item><Link to="/favorites" style={{color:"#000000",  fontSize:"18px"}}>favorites</Link></Menu.Item>
+                        <Menu.Item><Link to="/createrecipe">share recipe</Link></Menu.Item>
+                        <Menu.Item><Link to="/favorites">favorites</Link></Menu.Item>
                         <Menu.Item></Menu.Item>
                         </>
                     }

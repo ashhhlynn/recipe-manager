@@ -27,9 +27,11 @@ class Favorites extends Component {
             )
         })  
         return (
+            <>
             <Card.Group itemsPerRow={3}  style={{width:"890px", marginTop: "1%", marginLeft:"6%"}}>
                 {recipeGroup}
             </Card.Group>            
+            </>
         )     
     }
 }

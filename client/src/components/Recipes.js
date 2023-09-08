@@ -17,7 +17,6 @@ class Recipes extends Component {
         .then(resp => resp.json())
         .then(data => {
             this.props.fetchRecipes(data)
-            console.log(data)
         })
     }
 
@@ -66,7 +65,7 @@ class Recipes extends Component {
             <Card.Group itemsPerRow={3} style={{width:"890px", marginTop: "1%", marginLeft:"6.2%"}}>
                 {recipeGroup}
             </Card.Group>
-            </>                
+            </>               
         )     
     }
 }

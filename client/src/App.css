@@ -31,3 +31,38 @@ h1 {
   margin-top:-1%;
 	background-image: url("https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/AN_images/healthy-eating-ingredients-1296x728-header.jpg?w=1155&h=1528");
 }
+
+.head .ui.segment {
+  background-color: #702963;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.head h1 {
+  font-family: Segoe Print;
+  color: #702963; 
+  font-size: 38px !important;
+}
+
+.head .ui.icon, a {
+  color: black !important;
+  letter-spacing: 1px;
+}
+
+.form-container .ui.segment {
+  width: 615px;
+}
+
+.recipe-card .ui.image{
+  cursor: pointer;
+  width: 270px;
+  height: 260px;
+}
+
+.nav .menu {
+  letter-spacing: 1px;
+  background-color:#F0f0f0 !important;
+  height:100%; 
+  min-height:500px;
+}
+

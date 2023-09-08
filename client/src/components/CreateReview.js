@@ -63,7 +63,7 @@ class CreateReview extends Component {
         return (
             <>
             <center>                   
-                <Form style={{marginTop:"-2%"}}onSubmit= { (event) => {this.handleSubmitRating(event, this.state)} }>
+                <Form style={{marginTop:"-2%"}} onSubmit= { (event) => {this.handleSubmitRating(event, this.state)} }>
                     <Form.TextArea
                         style={{width:"300px"}}
                         type="text"
@@ -72,8 +72,8 @@ class CreateReview extends Component {
                         value={this.state.text} 
                         onChange={this.handleChange}
                     />
-                    <Rating color="purple" size="massive" maxRating={5} onRate={this.handleRating} />
-                    <Form.Button circular basic color="black" style={{width:"130px", marginTop:"3%"}}className="formButtons" content='Submit'/>        
+                    <Rating size="massive" maxRating={5} onRate={this.handleRating} />
+                    <Form.Button circular basic color="black" style={{width:"130px", marginTop:"3%"}} content='Submit'/>        
                 </Form>   
             </center>
             </>

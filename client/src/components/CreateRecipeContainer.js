@@ -12,12 +12,12 @@ function CreateRecipeContainer(props) {
     }
     
     return (
-        <>          
-        <Segment style={{marginLeft:"29.5%", marginTop:"2%", width:"615px"}}>
-            <h1 style={{ marginTop:"1.5%"}}>share recipe</h1>
-            <CreateRecipe categories={props.categories} handleRoute={handleRoute} />
-        </Segment>
-        </>
+        <div className="form-container">       
+            <Segment style={{marginLeft:"29.5%", marginTop:"2%"}}>
+                <h1 style={{ marginTop:"1.5%"}}>share recipe</h1>
+                <CreateRecipe categories={props.categories} handleRoute={handleRoute} />
+            </Segment>
+        </div>   
     )
 }
 

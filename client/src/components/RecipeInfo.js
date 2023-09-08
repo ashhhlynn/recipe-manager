@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Item, Image, Grid, Rating, Button, Icon, Divider } from 'semantic-ui-react'
+import { Item, Image, Grid, Rating, Button, Divider } from 'semantic-ui-react'
 import RecipeReviews from './RecipeReviews'
 import CreateReview from './CreateReview'
 import { connect } from "react-redux"
@@ -20,25 +20,26 @@ class RecipeInfo extends Component {
             <center>
                 <Grid stackable columns={2}>
                     <Grid.Column > 
-                        <br></br>
+                        <br></br><br></br><br></br>
                         <Image size="medium" src={this.props.recipe.image_url}/>
                     </Grid.Column>
                     <Grid.Column>
                         <Item style={{marginRight:"10%", textAlign:"center"}}>
                             {this.props.favorites.find(r => r.recipe_id == this.props.recipe.id) ?
                                 <>
-                                <Button onClick={this.props.removeFavorite} circular floated="right">
-                                    <center><Icon name="minus"/></center>
+                                <Button style={{marginRight:"-7%"}} onClick={this.props.removeFavorite} circular floated="right">
+                                    <center>Remove</center>
                                 </Button>
                                 </>
                             :
                                 <>
-                                <Button onClick={this.props.addToFavorites} circular floated="right">
-                                    <center><Icon name="heart"/></center>
+                                <Button style={{marginRight:"-7%"}} onClick={this.props.addToFavorites} circular floated="right">
+                                    <center>Favorite</center>
                                 </Button>
                                 </>
                             }
-                            <h1 style={{fontWeight:"normal", marginTop:"3%"}}>{this.props.recipe.name}</h1>
+                            <br></br><br></br>
+                            <h1 style={{marginTop:"3%"}}>{this.props.recipe.name}</h1>
                             <Rating style={{marginTop:"-6%"}} size="huge" key={this.props.recipe.id} rating={this.props.recipe.average} disabled maxRating={5} />
                             <Divider></Divider>
                             <br></br>

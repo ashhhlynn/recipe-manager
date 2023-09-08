@@ -13,13 +13,13 @@ function Login() {
     }
 
     return (
-        <>
-        <Segment style={{marginLeft:"28%", marginTop:"5%", width:"615px"}}>
-            <h1>sign in</h1>
-            <p>Haven't made an account? <Button circular basic size="small" as={Link} to='/signup'>Sign Up</Button></p>
-            <LoginForm handleRoute={handleRoute} />
-        </Segment>    
-        </>
+        <div className="form-container"> 
+            <Segment style={{marginLeft:"28%", marginTop:"5%"}}>
+                <h1>sign in</h1>
+                <p>Haven't made an account? <Button circular basic size="small" as={Link} to='/signup'>Sign Up</Button></p>
+                <LoginForm handleRoute={handleRoute} />
+            </Segment>    
+        </div>
     )
 }
 

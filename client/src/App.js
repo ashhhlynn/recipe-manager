@@ -42,7 +42,7 @@ class App extends Component {
       <Router>
         <div className="App">   
           <Head/>
-          <Container style={{marginTop:"1.3%", border:"none", boxShadow:"none"}}>
+          <Container style={{marginTop:"1.3%"}}>
             <Segment style={{height:"100%", marginLeft:"-7%", marginRight:"-6.5%", marginTop:"-1.4%" }}>
               <Grid stackable columns={2} >
                 <Grid.Column style={{width:"300px"}}> 
