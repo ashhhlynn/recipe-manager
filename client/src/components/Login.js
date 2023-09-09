@@ -18,7 +18,7 @@ function Login(props) {
             <Segment style={{marginLeft:"28%", marginTop:"5%"}}>
                 <h1>sign in</h1>
                 <p>Haven't made an account? <Button circular basic size="small" as={Link} to='/signup'>Sign Up</Button></p>
-                <LoginForm handleRoute={handleRoute} />
+                <LoginForm handleRoute={handleRoute}/>
             </Segment>    
         </div>
     )

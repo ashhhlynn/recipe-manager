@@ -5,7 +5,9 @@ import { updateRR } from "./actions/rootActions"
 
 class CreateReview extends Component {
 
-    state = { rating: 0 }
+    state = { 
+        rating: 0 
+    }
 
     calculateAverage = (number) => {
         let reviews = this.props.recipe.reviews.map(r => r.score)

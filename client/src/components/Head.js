@@ -20,7 +20,7 @@ class Head extends Component {
         return (
             <div className="head">
                 <Segment style={{marginBottom:"0%"}}>Share, Save, and Score Recipes with Five Ingredients or Less</Segment>
-                <Menu borderless icon="labeled" style={{marginTop:"-.6%"}} >
+                <Menu borderless icon="labeled" style={{marginTop:"-.6%"}}>
                     <h1 style={{ marginTop:"1.6%", marginLeft:"3%"}}>
                         Dash Dish
                     </h1>

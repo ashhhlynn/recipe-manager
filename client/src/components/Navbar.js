@@ -15,7 +15,7 @@ class Navbar extends Component {
         let categories = this.props.categories.map(c => {
             return (
                 <>
-                <Label onClick={this.sortCat} as={Link} to='/' id={c.id} style={{background:"none", cursor:"pointer"}}>
+                <Label onClick={this.sortCat} as={Link} to='/' id={c.id} style={{fontWeight:"normal", background:"none", cursor:"pointer"}}>
                     {c.title}
                 </Label><br></br>
                 </>

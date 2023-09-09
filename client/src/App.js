@@ -64,7 +64,7 @@ class App extends Component {
                       <Recipes/>
                     </Route>
                     <Route exact path="/createrecipe">
-                      <CreateRecipeContainer categories={this.props.categories}/>
+                      <CreateRecipeContainer fetchAllRecipes={this.fetchAllRecipes} categories={this.props.categories}/>
                     </Route>
                     <Route exact path="/favorites">
                       <Favorites/>

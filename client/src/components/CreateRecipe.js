@@ -80,7 +80,7 @@ class CreateRecipe extends Component {
         })
         return ( 
             <>
-            <Form success onSubmit= { (event) => {this.handleSubmit(event, this.state)}}>
+            <Form success onSubmit={(event) => {this.handleSubmit(event, this.state)}}>
                 <Form.Input
                     required
                     type="text"

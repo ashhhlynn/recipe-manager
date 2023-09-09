@@ -68,7 +68,7 @@ class LoginForm extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return { 
-      checkUser: (user) =>  { dispatch(checkUser(user)) },
+      checkUser: (user) =>  { dispatch(checkUser(user)) }
     }
 }
   

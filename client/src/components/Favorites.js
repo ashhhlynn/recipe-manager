@@ -11,13 +11,11 @@ class Favorites extends Component {
     }
 
     getFavorites = () => {
-        if (this.props.currentUser.length !== 0) {
-            fetch("/favorites")
+        fetch("/favorites")
             .then(resp => resp.json())
             .then(data => {
                 this.props.fetchFavorites(data)
-            })
-        }
+            }) 
     }
 
     render() {
@@ -28,7 +26,7 @@ class Favorites extends Component {
         })  
         return (
             <>
-            <Card.Group itemsPerRow={3}  style={{width:"890px", marginTop: "1%", marginLeft:"6%"}}>
+            <Card.Group itemsPerRow={3} style={{width:"890px", marginTop: "1%", marginLeft:"6%"}}>
                 {recipeGroup}
             </Card.Group>            
             </>

@@ -12,7 +12,7 @@ import RecipeSearch from './RecipeSearch'
 class Recipes extends Component {        
 
     getRecipes = () => {
-        console.log("Recipe updated.")
+        console.log("updated")
     }
 
     sortItems = (event) => {

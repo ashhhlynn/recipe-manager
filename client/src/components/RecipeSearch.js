@@ -1,6 +1,6 @@
 import _ from 'lodash'
 import React, { useState } from 'react'
-import { Icon, Button, Item, Form  } from 'semantic-ui-react'
+import { Icon, Button, Item, Form } from 'semantic-ui-react'
 
 function RecipeSearch(props) {
     

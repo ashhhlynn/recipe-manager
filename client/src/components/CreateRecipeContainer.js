@@ -8,6 +8,7 @@ function CreateRecipeContainer(props) {
     const history = useHistory()
 
     function handleRoute() {
+        props.fetchAllRecipes()
         history.push('/')
     }
     
@@ -15,7 +16,7 @@ function CreateRecipeContainer(props) {
         <div className="form-container">       
             <Segment style={{marginLeft:"29.5%", marginTop:"2%"}}>
                 <h1 style={{ marginTop:"1.5%"}}>share recipe</h1>
-                <CreateRecipe categories={props.categories} handleRoute={handleRoute} />
+                <CreateRecipe categories={props.categories} handleRoute={handleRoute}/>
             </Segment>
         </div>   
     )

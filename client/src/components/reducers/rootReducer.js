@@ -96,12 +96,6 @@ const rootReducer = (state = initialState, action) => {
                 favorites: newFaves,
                 loading: false,
             };
-        
-        case "ADD_RECIPE":
-            return {
-                ...state,
-                recipes: [...state.allRecipes, action.data],
-            };
 
         case 'SET_CURRENT_USER':
             console.log(action.user)

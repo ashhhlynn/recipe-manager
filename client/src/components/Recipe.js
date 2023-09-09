@@ -94,7 +94,7 @@ class Recipe extends Component {
 const mapStateToProps = (state) => {
     return { 
         favorites: state.favorites,
-        currentUser: state.currentUser
+        currentUser: state.currentUser,
     }
 }
 

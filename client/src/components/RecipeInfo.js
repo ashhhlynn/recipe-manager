@@ -6,10 +6,6 @@ import { connect } from "react-redux"
 
 class RecipeInfo extends Component {
 
-    updateModal = () => {
-        this.props.handleUpdate()
-    }
-    
     render() {
         const recipe_ingredients = this.props.recipe.recipe_ingredients.map(ri => {
             return (
@@ -43,7 +39,7 @@ class RecipeInfo extends Component {
                             <Rating style={{marginTop:"-6%"}} size="huge" key={this.props.recipe.id} rating={this.props.recipe.average} disabled maxRating={5} />
                             <Divider></Divider>
                             <br></br>
-                            <CreateReview recipe={this.props.recipe} updateModalClick={this.updateModal}/>
+                            <CreateReview recipe={this.props.recipe} updateModalClick={this.props.handleUpdate}/>
                         </Item>
                     </Grid.Column>
                 </Grid>
@@ -73,7 +69,6 @@ class RecipeInfo extends Component {
 const mapStateToProps = (state) => {
     return { 
         favorites: state.favorites,
-        currentUser: state.currentUser
     }
 }
 
