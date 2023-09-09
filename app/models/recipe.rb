@@ -3,6 +3,7 @@ class Recipe < ApplicationRecord
     has_many :recipe_ingredients, dependent: :destroy
     has_many :favorites, dependent: :destroy
     belongs_to :category 
+    
     accepts_nested_attributes_for :recipe_ingredients
 
     validates :description, length: { maximum: 500 }
