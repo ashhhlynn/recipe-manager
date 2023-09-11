@@ -32,13 +32,13 @@
 <img width="670" height="300" src="https://user-images.githubusercontent.com/84604278/264169948-77571880-7f9a-4e19-bf8f-77234ffeb0d1.png">
 
 ### Recipe Modal
-<img width="670" height="300" src="https://user-images.githubusercontent.com/84604278/264169952-82140815-6cdd-4bb2-9f3a-d625d70791b7.png">
+<img width="670" height="290" src="https://user-images.githubusercontent.com/84604278/264169952-82140815-6cdd-4bb2-9f3a-d625d70791b7.png">
 
 ### Recipe Modal Cont.
-<img width="670" height="300" src="https://user-images.githubusercontent.com/84604278/264169953-69516b3a-c55b-46ee-9665-ec7cc6695f72.png">
+<img width="670" height="295" src="https://user-images.githubusercontent.com/84604278/264169953-69516b3a-c55b-46ee-9665-ec7cc6695f72.png">
 
 ### Create Recipe
-<img width="670" height="300" src="https://user-images.githubusercontent.com/84604278/264169950-47a2c4bb-d04a-4d46-8f17-5632be6d4487.png">
+<img width="670" height="295" src="https://user-images.githubusercontent.com/84604278/264169950-47a2c4bb-d04a-4d46-8f17-5632be6d4487.png">
 
 ## Setup
 - ` git clone < this repository > `
