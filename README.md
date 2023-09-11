@@ -1,5 +1,5 @@
 # Dash Dish
-> A content management application for recipes with five ingredients or less. Created with a JavaScript React & Redux frontend and Ruby on Rails backend. Users can share recipes, rate and review recipes, and add recipes to a personal favorites list. Styled with Semantic UI React and CSS.
+> A content management application for recipes containing five ingredients or less. Created with a JavaScript React & Redux front end and Ruby on Rails back end. Users can share recipes, rate and review recipes, and add recipes to a personal favorites list. Styled with Semantic UI React and CSS.
 
 ## Technologies Used
 - Ruby 
