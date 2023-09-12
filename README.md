@@ -14,9 +14,10 @@
 - HTML & CSS
 - PostgreSQL 
 - BCrypt
+- Active Model Serializers
 
 ## Features
-- Register and log in
+- Register and log in with BCrypt gem
 - Search recipes by title and filter by category 
 - Sort recipes by alphabetical order, date, number of reviews, and highest rating
 - Share recipes 
