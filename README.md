@@ -1,5 +1,5 @@
 # Dash Dish
-> A content management application for recipes containing five ingredients or less. Built with a JavaScript and React front end and Ruby on Rails with PostgreSQL database back end. Users can share recipes, rate and review recipes, and add recipes to a personal favorites list. Deployed to Render. 
+> A content management application for recipes containing five ingredients or less. Built with a JavaScript and React front end and a Ruby on Rails with PostgreSQL database back end. Users can share recipes, rate and review recipes, and add recipes to a personal favorites list. Deployed to Render. 
 
 > Check out the <a href="https://recipe-manager-tz2i.onrender.com/">live</a> and <a href="https://vimeo.com/863270684/bce0d4f705">video</a> demos.
 
@@ -56,7 +56,7 @@
 - ` npm start `
 
 ## Acknowledgements
-This project was created by Ashley
+This project was created by Ashley.
 
 ## License 
 This project is MIT licensed.
