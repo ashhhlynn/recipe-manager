@@ -17,12 +17,11 @@
 - Active Model Serializers
 
 ## Features
-- Register and log in with BCrypt gem
-- Search recipes by title and filter by category 
-- Sort recipes by alphabetical order, date, number of reviews, and highest rating
-- Share recipes 
-- Rate and review recipes, and view reviews by other users
-- Store and remove recipes under a personal favorites list
+- Register and log in authenticated with BCrypt gem
+- Create recipes to share with other users
+- View recipe index with reviews and rating averages on 5-star scale 
+- Search index by keyword and sort by category, title, date, rating, and review count
+- Store or remove recipes under favorites, rate and leave reviews 
 
 ## Media  
 ### Home Screen
