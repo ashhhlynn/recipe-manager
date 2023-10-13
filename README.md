@@ -21,7 +21,7 @@
 - Create recipes to share with other users
 - View recipe index with reviews and rating averages on 5-star scale 
 - Search index by keyword and sort by category, title, date, rating, and review count
-- Store or remove recipes under favorites, rate and leave reviews 
+- Store or remove recipes under favorites, rate and write reviews 
 
 ## Media  
 ### Home Screen
