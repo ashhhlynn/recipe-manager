@@ -1,5 +1,11 @@
 # Dash Dish
-> A content management application for recipes containing five ingredients or less. Built with a JavaScript and React front end and a Ruby on Rails with PostgreSQL database back end. Users can share recipes, rate and review recipes, and add recipes to a personal favorites list.  
+<table>
+  <tr>
+    <td>
+A content management application for recipes containing five ingredients or less. Built with a JavaScript and React front end and a Ruby on Rails with PostgreSQL database back end. Users can share recipes, rate and review recipes, and add recipes to a personal favorites list.  
+    </td>
+  </tr>
+</table>
 
 ## Technologies Used
 - Ruby 
