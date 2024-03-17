@@ -8,17 +8,14 @@ A content management application for recipes containing five ingredients or less
 </table>
 
 ## Technologies Used
-- Ruby 
-- Rails
-- JavaScript
-- React
+- Ruby on Rails
+- PostgreSQL 
+- BCrypt
+- React.js
 - Redux
 - React Router
 - Semantic UI React
 - HTML & CSS
-- PostgreSQL 
-- BCrypt
-- Active Model Serializers
 
 ## Features
 - Register and log in authenticated with BCrypt gem
@@ -54,6 +51,7 @@ A content management application for recipes containing five ingredients or less
 - ` rake db:migrate `
 - ` rake db:seed `
 - ` rails s `
+#### In Separate Terminal
 - ` cd client `
 - ` npm install `
 - ` npm start `
